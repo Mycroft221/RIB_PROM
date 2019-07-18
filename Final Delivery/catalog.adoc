@@ -1,0 +1,36 @@
+*Development of a FHIR Application to Capture Patient Reported Measures (PRM) for Patients with Rib Fractures*
+
+*Team No Sugar*: Tyler Rodgers, Antonio Franchini, Dan Paris, Greg Aldahondo
+
+Github Link:  https://github.gatech.edu/gt-cs6440-hit-spring2019/Development-of-a-FHIR-application-to-capture-patient-reported-measures-PRM-for-patients-with-rib
+
+* *Final Delivery*
+** Research: All research files used as well as a pdf with links
+** catalog.doc
+** catalog.pdf
+** Manual.adoc
+** Manual.pdf
+** Special Instructions.adoc
+** Special Instructions.pdf
+** Team Final Project Presentation.pdf
+** docker-compose.yml
+** Final Gantt Chart
+
+* Weekly Reports: All past weekly reports
+* Jenkinsfile
+* Dockerfile
+* src
+** app
+*** api.service.ts
+*** login
+**** login.component.ts
+**** login.component.html
+*** nav-bar
+**** nav-bar.component.ts
+**** nav-bar.component.html
+*** survey
+**** survey.component.ts
+**** survey.component.html
+**** survey.component.css
+**** java
+***** newSurveyScores.java

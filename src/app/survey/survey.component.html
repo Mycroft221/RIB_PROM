@@ -1,0 +1,58 @@
+<div style='margin-top: 5rem'>
+  <mat-card class="example-card">
+    
+    <mat-card-header>
+        <mat-card-title class="page-title">Please answer the following questions</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+          <table class="example-full-width" cellspacing="0" style="Margin-top:30px">
+            <tr>
+              <td>
+
+                <label id="spirometer-measurement-radio-group-label">What's your spirometer measurement?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSpirometerMeasurement"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let spirometerMeasurement of spirometerMeasurements" [value]="spirometerMeasurement">
+                    {{spirometerMeasurement}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-level-radio-group-label">What's your pain level on a scale from 0 to 10?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainLevel">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painLevel of painLevels" [value]="painLevel">
+                    {{painLevel}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+              </td>
+            </tr>
+          </table>
+          <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <mat-card class="example-card" class="noshadow" style="Margin-top:30px; box-shadow: none">
+
+      <mat-card-header>
+          <mat-card-title class="page-title">Did you know that...</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+          <label id="spirometer-measurement-radio-group-label">{{currentInformativeMessage}}</label>
+      </mat-card-content>
+      
+    </mat-card>
+  
+</div>

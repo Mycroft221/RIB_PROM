@@ -1,0 +1,13 @@
+*Development of a FHIR Application to Capture Patient Reported Measures (PRM) for Patients with Rib Fractures*
+
+*Team No Sugar*: Tyler Rodgers, Antonio Franchini, Dan Paris, Greg Aldahondo
+
+Github Link: https://github.gatech.edu/gt-cs6440-hit-spring2019/Development-of-a-FHIR-application-to-capture-patient-reported-measures-PRM-for-patients-with-rib
+
+* Go to https://cs6440-s19-prj033.apps.hdap.gatech.edu
+* Use patient id 1696383 to login and test
+* If for any reason the website is not reachable at the above address, the app can be run locally by following these steps:
+** Check out the repository https://github.gatech.edu/gt-cs6440-hit-spring2019/Development-of-a-FHIR-application-to-capture-patient-reported-measures-PRM-for-patients-with-rib.git
+** Install all the needed libraries by executing *npm install* from the root folder (command line)
+** Run the application by executing *ng serve* from the root folder (command line)
+** Open the browser and navigate to http://localhost:4200

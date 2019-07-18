@@ -1,0 +1,58 @@
+POST URL:
+http://hapi.fhir.org/baseDstu3/Observation?_format=json&_pretty=true
+
+
+Pain JSON:
+
+{
+  "resourceType": "Observation",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": #datetime stamp Ex. "2019-04-21T05:10:52.108+00:00"#
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "64008-6",
+        "display": "Pain severity"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/#patient id#"
+  },
+  "valueQuantity": {
+    "value": #integer Pain Score#,
+    "unit": "Qn",
+    "code": "Qn"
+  }
+}
+
+
+Inspiratory JSON:
+
+{
+  "resourceType": "Observation",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": #datetime stamp Ex. "2019-04-21T05:10:52.108+00:00"#
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "19852-3",
+        "display": "Inspiratory capacity by Spirometry"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/#patient id#"
+  },
+  "valueQuantity": {
+    "value": #double inspiratory volume#,
+    "unit": "mL",
+    "code": "mL"
+  }
+}

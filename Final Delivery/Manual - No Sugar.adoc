@@ -1,0 +1,26 @@
+*Development of a FHIR Application to Capture Patient Reported Measures (PRM) for Patients with Rib Fractures*
+
+*Team No Sugar*: Tyler Rodgers, Antonio Franchini, Dan Paris, Greg Aldahondo
+
+Github Link: https://github.gatech.edu/gt-cs6440-hit-spring2019/Development-of-a-FHIR-application-to-capture-patient-reported-measures-PRM-for-patients-with-rib
+
+
+* Enter the medical id found on patient's wristband in the provided space then click on the login button.
+
+image::login.png[]
+
+* After breathing into an incentive spirometer and reading the measurement, choose the range that best fits the measurement. If the measurement is exactly at a cutoff, then choose the lower range.
+
+* Pick the option that best describes your level of pain
+
+* Once both options have been chosen, press on the submit button.
+
+image::survey.png[]
+
+
+
+
+
+
+
+
