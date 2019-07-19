@@ -16,7 +16,7 @@ export class SurveyComponent implements OnInit {
     '1000 - 1250 mL',
     '1250 - 1500 mL',
     '1500 - 1750 mL',
-    '> 1750 mL',
+    '> 1750 mL'
   ];
 
   chosenPainLevel: string;
@@ -28,6 +28,15 @@ export class SurveyComponent implements OnInit {
     '8 (Hurts a lot)',
     '10 (Hurts worst)'
   ];
+
+  // add this
+  chosenTestOption: string;
+  options: string[] = [
+    'testOpt1',
+    'testOpt2',
+    'testOpt3'
+  ];
+  // end
 
   currentInformativeMessage = '';
   informativeMessages: string[] = [
@@ -58,7 +67,6 @@ export class SurveyComponent implements OnInit {
 
       var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
       var spiroScore = this.chosenSpirometerMeasurement;
-
       if (spiroScore.includes(" - ")){
         spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
       }
