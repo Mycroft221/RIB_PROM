@@ -1,0 +1,925 @@
+/*-----------------------------------------------------
+  Layout and Positioning
+-----------------------------------------------------*/
+
+body
+{
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+
+/*-----------------------------------------------------
+  Layout and Positioning
+-----------------------------------------------------*/
+
+div.Table_01 {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width: 100%;
+	height: 100%;
+}
+
+div.over-css-template-01 {
+	position:relative;
+	left:0px;
+	top:0px;
+	width:100%;
+	background-color : #326D8F;
+}
+
+div.over-css-template-02 {
+	position:absolute;
+	left:0px;
+	top:66px;
+	width:100%;
+}
+
+div.over-css-template-03 {
+	position:absolute;
+	top:48px;
+	width: 100%;
+	margin : 0px;
+}
+
+div.over-css-template-04 {
+	position:absolute;
+	left:20px;
+	top:120px;
+	margin : 0px;
+	width: 95%;
+	height: 85%;
+}
+
+
+div.ContentPaneOld {
+	position:absolute;
+	left:161px;
+	top:125px;
+	margin : 0px;
+}
+
+div.LeftPaneOld {
+	position:absolute;
+	left:20px;
+	top:125px;
+	width:141px;
+	margin : 0px;
+}
+
+div.Header 
+{
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;	
+	font-weight: bold;	
+	background-color: #326d8f;
+	color:#ffffff;
+	overflow: hidden;
+	width: auto;	
+	border: 1px solid #326d8f; 
+	padding: 3px;
+}
+
+/*************************************
+* Main Navigation Tabs
+****************************************/
+#header {
+	background: #326d8f;
+	height: 30px;
+	text-align: left;
+	/*width: 100%;*/ /*how wide the nav tabs control is */
+	margin: 0 auto;
+	margin-top: 0px; /* how far navigation sits from element above it */
+}
+
+
+#nav-tabs {
+	margin-left: 1px; /* controls horizontal space on left of the nav tabs */
+	margin-top: 1px; /* controls how tall the navigation tabs are */
+	position: absolute;
+	/*width: 680px;*/
+}
+#nav-tabs ul {
+	margin: 0;
+	padding: 0;
+	width: 600px;
+}
+
+#nav-tabs ul a { width: auto; }
+
+#nav-tabs li {
+	float: left;
+	clear: none;
+	background: url(images/tab_left.gif) no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 12px; /* left padding is width of image */
+	margin-left: -1px;
+	list-style-type:none;
+}
+
+#nav-tabs li.nav-tab-selected {
+	background-position: 0% -29px;
+	border-width: 0;
+	margin-left: -1px;	/* this removes the gap between the highlighted tab*/
+}
+
+#nav-tabs li.nav-tab-selected span {
+	background-position: 100% -29px;
+	line-height: 13px;
+	padding-bottom: 9px;
+}
+#nav-tabs li.nav-tab-selected a {
+	color: #326D8F;
+}
+#nav-tabs li.nav-tab-selected a:hover {
+	text-decoration: none;
+	/*cursor: default;*/
+}
+
+#nav-tabs span {
+	padding: 7px 0px 4px 0px;
+	background: url(images/tab_right.gif) no-repeat right top; 
+	display: block;
+	float: left;
+	line-height: 18px;
+}
+
+#nav-tabs a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 12px;
+	white-space: nowrap;
+	padding: 4px 12px 4px 12px;
+	margin-left: -12px;
+	 float: none;
+}
+#nav-tabs a:hover {
+	text-decoration: underline;
+}
+
+#nav-links a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 11px;
+	white-space: nowrap;
+	padding: 4px 12px 4px 12px;
+	margin-left: -12px;
+	float: none;
+}
+#nav-links a:hover {
+	text-decoration: underline;
+}
+
+
+/**********************************************
+* Second Level Tabs 
+************************************************/
+
+#header-sub {
+	background-image: url(images/navigtion_pane_top_fill.gif);
+	background-position: 100% -30px;
+	height: 29px;
+	width: 100%;
+}
+
+#header-sub ul {
+	margin: 0;
+	padding: 0;
+	width: 800px;
+	list-style-type:none;
+	
+}
+
+#header-sub ul a 
+{
+	color: #326D8F;
+	display: block;
+	text-decoration: none;
+	width: auto; 
+}
+
+#header-sub ul a:hover
+{
+	color: #326D8F;
+	text-decoration: underline;
+	width: auto; 
+}
+
+#header-sub li {
+	float: left;
+	/*background: url(images/tab_left.gif) no-repeat left top;*/
+	list-style-type:none;
+	margin: 0px 0 4 -1;
+	padding: 0px 12px 0px ;
+	/*background: url(images/tab_right.gif) no-repeat right top; */
+	display: block;
+	line-height: 18px;
+	border-right: solid 2px gray;
+
+}
+
+#header-sub span {
+	padding: 0px 12px 0px 0px;
+	/*background: url(images/tab_right.gif) no-repeat right top; */
+	display: block;
+	color: #326D8F;
+	float: left;
+	line-height: 18px;
+	margin: 7px 0px 4px; /* top, R/L, bottom */
+	/*border-right: solid 2px gray;*/
+}
+
+.subselected {
+	text-decoration: underline !important;
+}
+
+#header-sub .sub-bottom {
+	display: block;
+	background: url(images/bg_hdr_sub_nav.gif) #EEEEEE repeat-x top left;
+	/*width: 660px;*/
+	height: 5px;
+	/*border: solid 1px;*/
+	/* IE fix for height issue */
+	font-size: 3px;
+	line-height: 3px;
+}
+
+/*******************************************
+*** Link style. This is meant to be as close
+*** to a normal hyperlink as possible
+********************************************/
+.StandardLink 
+{
+	font-family: Verdana;
+	font-size: 12px;
+	color: Blue;
+	font-weight: normal;
+	cursor:pointer;
+}
+a.StandardLink:link	
+{
+	text-decoration: underline;
+    color:Blue;
+}
+a.StandardLink:visited	
+{
+	text-decoration: underline;
+    color:Blue;
+}
+a.StandardLink:active  {
+	text-decoration: underline;
+    color:Blue;
+}
+a.StandardLink:hover
+{
+	color: purple;
+	text-decoration: underline;
+}    
+
+/***********************************
+*** Tables 
+**************************************/
+
+TABLE.StandardTable 
+{
+	border-top:1px solid #326d8f;
+	border-bottom: 1px solid #326d8f; 
+	border-left: 1px solid #326d8f; 
+	border-right: 1px solid #326d8f;
+}
+
+TD.StandardTableTitle {
+	font-weight: bold;
+	font-size: 12px;
+	background-color: #326d8f;
+	color:#ffffff;
+}
+
+TH.StandardTableHeader, td.StandardTableHeader {
+	font-weight: bold;
+	font-size: 12px;
+	color: Black;
+	vertical-align:middle;
+}
+
+TABLE.GridTable 
+{
+	border: 1px solid #326d8f; 
+	border-collapse:collapse;
+	padding:0;
+}
+
+TABLE.GridTable td
+{
+   font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #326d8f; 
+	padding: 3px;
+}
+
+TR.GridTableTitle 
+{
+	background-color: #326d8f;	
+	font-weight: bold;	
+	color:#ffffff;
+}
+
+TR.GridTableHeader {
+	font-weight: bold;
+	font-size: 14px;	
+}
+
+
+/**************************
+*** Fonts and such
+**************************/
+
+.Standard
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.StandardFaded
+{
+	font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+	color: gray;
+}
+
+.StandardError
+{
+	font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight:bold;
+	color:Red;
+}
+
+.StandardTextBox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+.InstrucTextBox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    color: Gray;
+}
+
+.StandardOrderBox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    width: 55;
+}
+
+.StandardButton
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    width:auto;
+    overflow:visible;
+    padding:2;
+}
+
+
+.StandardButtonVAMiddle
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    width:250px;
+    overflow:visible;
+    padding:15px,2px,2px,2px
+    display: inline-block;
+    vertical-align:middle;
+    height:53px;
+}
+
+.PageHeaderLarge
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  20px;
+    font-weight: bold;
+}
+
+.PageHeader {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  16px;
+    font-weight:    bold;
+    
+}
+
+.PageHeaderSmall {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  14px;
+    font-weight:    bold;
+}
+
+.UnavailableLink
+{
+	font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+    color:Gray;
+    text-decoration:underline;
+    
+}
+
+/****************************************************************
+Item Administration Preview
+***********************************************************************/
+
+	.LeftPane_Preview
+{
+	Width : 250px; 
+	height : 465px;
+	overflow : auto; 
+	 
+/*
+	border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+*/
+
+}
+.ContentPane_Preview
+{
+	left:205px;
+	width:800px;
+	height : 465px;
+	text-align:center;
+	
+	border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+	
+	
+}
+.CAT_Settings
+{
+	left:0px;
+	width:760px;
+	height : 65px;
+	text-align:center;
+	/*
+	border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+	*/
+	
+	
+}
+.CAT_Settings_Header
+{
+    font-family:Verdana,Helvetica,sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    vertical-align:bottom;
+}
+
+
+/****************************************************************
+Breadcrumbs
+***********************************************************************/
+
+.BreadcrumbSeparator
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8px;
+    font-weight: bold; 
+    color:Navy;
+}
+
+/********************************************
+Project List Specific styling
+************************************************/
+
+.CurrentProject
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+    color: Green;
+}
+
+/***********************************************
+Registration errors
+************************************************/
+.RegistrationError
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal; 
+    color:Red;
+}
+
+
+/*------------------------------------------------------
+  new classes for iPad 
+--------------------------------------------------------*/
+
+heightFormPanel
+{
+    height: 410px;
+    overflow:scroll;
+}
+
+.SystemMsg1
+{
+    font-family: Verdana Bold, Helvetica, sans-serif;
+    font-size: 12px;
+    position:absolute;
+    left:620px;
+    top:-5px; 
+    width:500px;
+    text-align:left;
+}
+
+.SystemMsg2
+{
+    font-family: Verdana Bold, Helvetica, sans-serif;
+    font-size: 11px; 
+    color:red;
+    position:absolute;
+    left:20px;
+    top:0px;
+    width:760px;
+    text-align:right;
+    visibility:hidden;
+}
+
+.tblMain
+{
+     width: 760px;
+     height: 240px;
+     border: 0;
+}
+
+.divHidden
+{
+    height: 0px;
+}
+
+.tblNavigation
+{
+    width: 760px;     
+    border: 0;
+   
+}
+
+.tblContent
+{
+    width: 100%;
+    border: 0;
+}
+
+.contextheight
+{
+    height: 35px;
+}
+/* Navigation Button*/
+.divNav
+{
+    width:325px;
+}
+
+.tdNav
+{
+    width:240px;
+}
+
+/* Navigation Buttons (RA mode) */
+.btnNavRA
+{
+    WIDTH:160px;
+    color:black;
+}
+
+.tdPreviousSection
+{
+    width: 160px;
+}
+
+/* Response Buttons*/
+.tblResponse
+{
+    width: 100%;
+    border: 0;
+}
+
+.btnResponse
+{
+    Width:400px;
+    height:30px;
+}
+
+/* Response options (radio buttons)*/
+.tdRadioButton
+{
+    width: 10px;
+    vertical-align: top;    
+}
+
+.chk1 {}
+
+.rdo {}
+
+
+.tblHorizontalScale
+{
+    width: 95%;
+    border: 0;
+    margin-left:15px;
+    font-size: 16px;
+}
+
+.HScaleLabels_Left
+{
+    width:100px;
+    text-align: center;
+    float:left;
+    font-size: 16px;
+}
+
+.HScaleLabels_Right
+{
+    width:100px;
+    text-align: center;
+    float:right;
+}
+
+.tdHScaleRadio
+{
+    width: 20%;
+    text-align:center;
+    vertical-align: top;
+}
+
+.HScaleLabels_Middle
+{
+    width:100px;
+    text-align: center;    
+}
+
+.hDescription
+{
+    text-align: center;
+    align: middle;
+    width: 20%;
+}
+
+.tdHSScaleLabel
+{
+    width: auto;
+    vertical-align: top;   
+}
+
+.LabelLeft
+{
+    text-align:left; 
+}
+
+.LabelRight
+{
+    text-align:right;
+}
+
+.LabelCenter
+{
+    text-align:center;
+}
+
+.tblHScaleLabel
+{
+    width: 98%;
+    border: 0;
+    margin-left: 15px;  
+}
+/* Harry Guess templates*/
+.imgHarry
+{
+     width:300px;
+     height:281px;
+}
+
+.tdImage
+{
+    width:15%;
+    vertical-align:top;
+}
+
+.tdSpacer
+{
+    width:10%;
+}
+
+.tdContents
+{
+    width:75%;
+    vertical-align:top;    
+}
+
+.btnResponseHarryGuess
+{
+    Width:400px;
+    height:30px;
+}
+
+.tblMainHarry
+{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.divContents
+{    
+    vertical-align:top;
+}
+
+/* Item Diads template*/
+.ItemDiadContext
+{
+    font-size:21px;
+}
+
+.ItemDiadStem
+{
+    text-align:center;      
+}
+
+.ItemDiadClearResponse
+{
+    width:300px;
+    text-align:left;
+}
+
+.spacer
+{
+    height:20px;
+}
+
+/* CAT Demo*/
+
+.CATHeightFormPanel
+{
+    height:470px;   
+}
+
+.CATReportButton
+{
+    width:160px;
+    color:black;
+}
+
+/* Registration Templates */
+
+.RegistrationStandard
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.tblRegistrationMain
+{
+    border:0; 
+}
+
+.tdTitlewidth
+{
+    width:65%;
+}
+
+.RegistrationStandardTextbox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.RegistrationStandardButton
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    width:auto;
+    overflow:visible;
+    padding:2;
+}
+
+.tdEnrollmentForm
+{   
+    width: 500px;
+}
+.td100
+{
+    width:100%;
+}
+
+.StandardCheckbox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.RegistrationCheckbox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.RegistrationRadio
+{
+	font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+.RegistrationMonth
+{
+}
+
+.RegistrationDay
+{
+}
+
+.RegistrationYear
+{
+}
+
+.List
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/***********************************************
+Language Picker
+************************************************/
+.tblLanguages 
+{
+    width:750px;  
+    font-size:large;
+    cursor:pointer;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+.trLanguages
+{   
+    height:65px;
+}
+
+.tdLanguageDescription
+{
+    padding-left:10%;
+}
+
+.tdLanguageName
+{
+}

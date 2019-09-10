@@ -1,0 +1,1076 @@
+// SocioDemographic validation
+//var page = "Controller.aspx?"
+var page = "Action.aspx?";
+var dirtyBit = false;
+var NOT_SAVED_MSG = "Your changes have not been saved. \n To save changes, click OK. \n To cancel changes, click Cancel on this window and on the following page.";
+var CONFIRM_MSG = NOT_SAVED_MSG;
+var repeatcounter = 0;
+
+
+function accessClosed() {
+
+    alert('This study does not have access to Assessment Center&quot;s data collection features. To obtain access, contact help@assessmentcenter.net. For more details, navigate to the Pricing page.');
+}
+
+function textCounter(maxlimit, field, countfield) // countfield is optional, if not given the function will simply return true/false.
+{
+    if (field.value.length > maxlimit) {
+        repeatcounter++;
+        field.value = field.value.substring(0, maxlimit);
+        if (repeatcounter > 5) {
+            alert("This field is limited to " + maxlimit + " characters.");
+            repeatcounter = 0;
+        } 
+        return false;
+    }
+    else if (countfield != null) {
+        countfield.value = maxlimit - field.value.length;
+    }
+
+    return true;
+}
+
+function setStandardClass(field) {
+    if (field.className != "StandardTextBox") {
+        field.setAttribute("value", "");
+        //className works in IE;  class works in all others
+        field.setAttribute("className", "StandardTextBox");
+        field.setAttribute("class", "StandardTextBox");
+    }
+}
+
+function setDirty(Message) { // Message is optional, will change the confirmation message displayed.
+
+    //alert("setDirty");
+    if ('dirtyBit' in window)
+        dirtyBit = true;
+    if (Message == null)
+        CONFIRM_MSG = NOT_SAVED_MSG; // not sending the Message parameter resets the confirmation message to the default.
+    else
+        CONFIRM_MSG = Message; // sending in a Message variable will change the message displayed
+    // If an *EMPTY* string is sent in, the message and confirmation will be skipped,
+    // This essentially makes the page behave as before, saving silently.
+    // That functionality is in the gotoModule() function, line 300 or so.
+
+}
+function clearDirty() {
+    //alert("clearDirty");
+    if ('dirtyBit' in window)
+        dirtyBit = false;
+    CONFIRM_MSG = NOT_SAVED_MSG;
+}
+function isDirty() {
+    //alert("isDirty");
+    if ('dirtyBit' in window)
+        return dirtyBit;
+    else return false;
+}
+
+function doExpand(obj){
+
+		mydiv = document.getElementById(obj );
+		mydiv.className = (mydiv.className == 'AssessmentTable')? 'AssessmentTable2' : 'AssessmentTable';
+}
+
+function startControl(module){
+	focusControl = null;
+	if(module==1){
+	
+		focusControl = getmyObject("Continue");
+		if(focusControl != null){
+			focusControl.focus();
+		}
+		
+	}
+	
+	if(module==0){
+		focusControl = getmyObject("UID");
+		if(focusControl != null){
+			focusControl.focus();
+		}
+		
+	}
+	
+	if(module==18){
+		try 
+		{
+			ot.init(document.forms[0]);
+		}
+		catch(err)
+		{
+		}
+	}
+	
+}
+
+function changePassword(){
+	regWindow = window.open("changePassword.aspx",'myPasswordWin','toolbar=no,menubar=no,resizable=no,directories=no,location=no,scrollbars=no,width=500,height=250'); 
+}
+
+function addContact(){
+	regContactWindow = window.open("Contact.aspx",'myContactWin','toolbar=no,menubar=no,resizable=no,directories=no,location=no,scrollbars=no,width=500,height=350'); 
+}
+
+
+function selectStudy(obj, user){	
+	document.forms[0].action = "Default.aspx?UserOID="+ user+ "&StudyOID=" + obj.value;
+	document.forms[0].submit();
+}
+	
+function editUserRegistration(link)
+{
+	gotoModule(link);
+}
+
+function newUserRegistration(link) {
+    gotoModule(link);
+}
+
+function saveProjectProperties(link)
+{
+	gotoModule(link);
+}
+
+function loadProjectProperties(link) 
+{
+    if (CONFIRM_MSG != NOT_SAVED_MSG)
+        CONFIRM_MSG = NOT_SAVED_MSG;
+    clearDirty(); // added 02-23-2010 to accomodate bug 546.
+
+	gotoModule(link);
+}
+
+function loadProjectList(link)
+{
+	gotoModule(link);
+}
+
+function saveProjectTeam(link)
+{
+	gotoModule(link);
+}
+
+function saveStudyInstruments(link)
+{
+	gotoModule(link);
+}
+
+function saveInstrumentItems(link)
+{
+	gotoModule(link);
+}
+
+function saveStudyContent(link)
+{
+	gotoModule(link);
+}
+
+function saveSearchForCustom(link)
+{
+	gotoModule(link);
+}
+
+function saveDevelopInstrument(link)
+{
+    gotoModule(link);
+}
+
+
+function validateRegistration(link){
+
+
+    if(!document.forms[0].txtPIN.disabled){
+
+        var RegExpression  =  new RegExp( "(^[A-Za-z0-9-.@_]{5,75}$)", "i");
+        					
+        if (!RegExpression.test(document.forms[0].txtPIN.value) ) {
+            //document.getElementById("valiatePIN").click();
+            alert( 'Alphanumeric login required.\rMust be at least 5 characters and cannot exceed 75 characters.\rSpaces and special characters, other than  " @ - . _ " are not allowed.' )
+            return;
+        }
+
+    }
+	gotoModule(link);
+
+	return;
+
+// apparently all this other stuff is skipped... ?
+		var msg ="";
+
+	// ********** Study **********
+	if(document.forms[0].lstStudy.selectedIndex == 0){
+		msg += (msg.length > 0) ? ", Study" : "Study" ;
+	}
+	
+	// ********** Date Approached **********
+	if(document.forms[0].txtDateApproached.value == ""){
+		msg += (msg.length > 0) ? ", Date Approached" : "Date Approached" ;
+	}
+	
+	// ********** Site **********
+	if(document.forms[0].lstSite.selectedIndex < 1){
+		msg += (msg.length > 0) ? ", Site" : "Site" ;
+	}
+	
+	// ********** Gender **********
+	var val_gender = false;
+	for(var i=0; i< document.forms[0].Gender.length ;i++){
+		if( document.forms[0].Gender[i].checked){
+			val_gender = true;
+		}
+	}
+	if(!val_gender){
+		msg += (msg.length > 0) ? ", Gender" : "Gender" ;
+	}
+	
+	
+	// ********** Consent **********
+	var val_consent = false;
+	for(var i=0; i< document.forms[0].Consent.length ;i++){
+		if( document.forms[0].Consent[i].checked){
+			val_consent = true;
+		}
+	}
+	if(!val_consent){
+		msg += (msg.length > 0) ? ", Consent Obtained" : "Consent Obtained" ;
+	}
+	
+	
+	/* ************** CONSENT GOES HERE ***************** */
+	// *********** Only required if consented to participate ***********
+	
+	if(document.forms[0].Consent[0].checked == true){
+	
+		// ********** Date Birth **********
+		//if(document.forms[0].txtDateOfBirth.value == ""){
+		//	msg += (msg.length > 0) ? ", Date of Birth" : "Date of Birth" ;
+		//}
+		
+		
+		// ********** Ethnicity **********
+		if(document.forms[0].lstEthnicity.selectedIndex == -1){
+			msg += (msg.length > 0) ? ", Ethnicity" : "Ethnicity" ;
+		}
+		
+		// ********** Race **********
+		if(document.forms[0].lstRace.selectedIndex == -1){
+			msg += (msg.length > 0) ? ", Race" : "Race" ;
+		}
+		
+	}
+	// *********** Only required if consented to participate ***********
+	
+	/* ************** CONSENT GOES HERE ***************** */
+	
+
+	
+	if(msg.length == 0){
+		gotoModule(link);
+	}else{
+		 var spanMsg = document.getElementById("Message");
+		spanMsg.innerHTML = "Required Field(s): " + msg;
+	}
+
+}
+
+function clearControl(ctlName){
+
+	
+	var els = document.forms[0].elements;
+	var pos;
+    var ctlCheck;
+    
+		for(i = 0;i< els.length; i++){
+		
+			pos =els[i].name.indexOf(ctlName);
+			ctlCheck = (ctlName == els[i].name.substr(pos, els[i].name.length - pos));	
+		
+			//Clear radio button
+			if(els[i].checked && ctlCheck){
+				//alert(els[i].name)
+				els[i].checked = false;
+			}	
+			
+			//Clear textbox
+			if(ctlCheck && els[i].type == "text"){
+				//alert(els[i].name)
+				els[i].value="";
+			}	
+			
+			//Clear list
+			if(ctlCheck && els[i].type == "select-one"){
+				//alert(els[i].name)
+				els[i].selectedIndex=-1;
+			}				
+		}
+
+
+}
+
+function gotoAssessment(urlExtension, language, isPreview) {
+    if (isPreview == 'False') {
+        window.location = page + "Module=43&Study=" + urlExtension + "&locale=" + language;
+    }
+    else {
+        window.location = page + "Module=43&Study=" + urlExtension + "&locale=" + language + "&Preview=1";
+    }
+}
+
+function gotoModule(link){
+	
+   var canProceed = true;
+   //This is for future use.  It will display a floating gif whenever a page is submitting.
+   //toggle('loadGif');
+
+   if (isDirty()) {
+       if (CONFIRM_MSG == '' || CONFIRM_MSG == null) // empty string is possible (means skip confirmation). Message is set in the setDirty(message) function.
+            canProceed = true;
+        else
+            canProceed = confirm(CONFIRM_MSG);
+
+        if (canProceed && link.indexOf("Action") == -1) // If link is parameterized, and "Action" is not already a parameter,
+            link += "&Action=Save";    // Add Parameter Action, set it to Save
+   }
+
+   if (canProceed)
+        {
+        
+        if (document.forms[0].lstStudy != null) {
+            document.forms[0].lstStudy.disabled = false;
+            if(document.forms[0].lstStudyArm != null){
+            document.forms[0].lstStudyArm.disabled = false;
+            }
+        }
+
+
+        objElems = document.forms[0].elements;
+
+        /*7/25/2014: added to not enable fields from instrument properties page when Back button is clicked to prevent accidentatly opening up fields in some instances. moduleid is setup in InstrumentProperties.xsl as hiddne field*/
+        var moduleid = 0;
+        if (document.getElementById("moduleid") != null)
+        {
+            moduleid = document.getElementById("moduleid").value;
+        }
+        
+        if (moduleid != "24")
+        {
+            for (i = 0; i < objElems.length; i++) {
+                objElems[i].disabled = false;
+            }
+        }
+        document.forms[0].action = page + link;
+        document.forms[0].submit();
+        }
+}
+
+	
+	
+
+function validate(Section){
+
+		var rtn =true;
+
+		var els = document.forms[0].elements;
+		
+
+		var msg = ""
+		var checked = 0
+		var controls = 0
+		var ctlName = ""
+
+		for(i = 0;i< els.length; i++){
+			if (els[i].checked){
+				checked += 1;
+			}
+			if(els[i].name.indexOf(ctlName) ==0){	
+				controls += 1;
+				ctlName = els[i].name;
+			}
+		}
+
+	/*
+		if(controls != checked){		
+			input_box=confirm("You have not answered all the questions.\r Are you sure you want to continue? \r\r  Click OK to Continue");
+			if (input_box==true)
+			rtn = true;			
+		}else{
+			rtn = true;
+		}
+	*/		
+
+		if(rtn){
+		
+			
+			document.forms[0].action = page + "Module=2&Section=" + Section;
+			document.forms[0].submit();
+		}
+
+
+	};
+
+
+	// Self Reported Response validation
+	function currentselection(obj, value){
+
+		var els = document.forms[0].elements;
+		for(i = 0;i< els.length; i++){
+			if (els[i].style.color == "darkred"){
+				els[i].style.color= "black";
+			}	
+		}
+
+		obj.style.color="darkred";
+
+		objNext =  getmyObject("Next");
+		objNext.style.color = "darkred";	
+		
+		objResponse=  getmyObject("txtResponse");
+		objResponse.value =  value;
+		
+	}
+	
+	function go(NavIndex){
+
+		objResponse = getmyObject("txtResponse")
+		//objResponse = document.getElementById(prefix + "txtResponse");
+		
+		if (objResponse.value ==""){
+			alert("Please select a choice first.")
+			return;
+		}
+	
+		document.forms[0].action = page + "Module=3&NavIndex=" + NavIndex;
+		document.forms[0].submit();
+	};
+	
+	function goNoValidate(NavIndex){
+
+		objResponse = getmyObject("txtResponse");
+		objResponse.value ="-2";
+			
+		document.forms[0].action = page + "Module=3&NavIndex=" + NavIndex;
+		document.forms[0].submit();
+	};
+
+	function getmyObject(name){
+			
+		var els = document.forms[0].elements;
+
+		for(i = 0;i< els.length; i++){
+			if (els[i].id.indexOf(name)> 0){
+				return els[i];
+			}				
+		}
+		return null;	
+	}
+	
+	
+	/*  ADDED 08/18/2005 */
+	function selectid(PIN){
+	
+		
+		//ctlPIN = getmyObject("txtPIN");
+		ctlPIN = document.getElementById("txtPIN");
+		ctlPIN.value=PIN;
+		//document.getElementById('_ctl3_txtPIN').value = PIN;		
+		document.forms[0].action = page + 'Module=6&NavIndex=-3';
+		document.forms[0].submit();
+		//gotoModule('Module=6&NavIndex=-3&PIN=65389')
+	}
+	
+	
+	/*
+	function submitenter(myfield,e,link){
+	
+	
+		if (window.event.keyCode == 13){
+			gotoModule(link);
+		}
+	}
+	
+	*/
+	function submitenter(myfield, e, link){
+	
+		var keycode;
+		//var e;
+		
+		if (window.event){
+			keycode = window.event.keyCode;
+			// I.E Browsers
+		}else if (e) {
+			keycode = e.which;
+			// Netscape
+		}else {
+			//alert("Nothing");
+			return true;
+		}
+
+		if (keycode == 13){
+			
+				gotoModule(link);
+			
+			//myfield.form.submit();
+			return true;
+		
+		}else{
+			
+			return true;
+		}
+	
+	}
+
+	function displayPanel(panel){
+		
+		try{
+
+//		    if (document.getElementById("_Panel2") == null && document.getElementById("txtPIN") != null) {
+//		        alert("no panel");
+		    //		    }
+
+		    //document.getElementById("SystemMsg").style.visibility = "hidden";
+
+        document.getElementById("_Panel1").style.color="blue";
+		document.getElementById("_Panel2").style.color="blue";
+		document.getElementById("_Panel3").style.color = "blue";
+		document.getElementById("_Panel4").style.color = "blue";
+		document.getElementById("_Panel5").style.color="blue";
+		document.getElementById("_Panel6").style.color="blue";
+
+		document.getElementById("Panel1").style.visibility = "hidden";
+		document.getElementById("Panel2").style.visibility = "hidden";
+		document.getElementById("Panel3").style.visibility = "hidden";
+		document.getElementById("Panel4").style.visibility = "hidden";
+		document.getElementById("Panel5").style.visibility = "hidden";
+		document.getElementById("Panel6").style.visibility = "hidden";
+
+		document.getElementById("OverviewLink").className = "none";
+		document.getElementById("Panel1Link").className = "none";
+		document.getElementById("Panel1Link").style.textDecoration = "none";
+		document.getElementById("Panel2Link").style.textDecoration = "none";
+		document.getElementById("Panel3Link").style.textDecoration = "none";
+		document.getElementById("Panel5Link").style.textDecoration = "none";
+		document.getElementById("Panel6Link").style.textDecoration = "none";
+		
+		document.getElementById(panel + "Link").style.textDecoration = "underline";
+
+		document.getElementById(panel).style.visibility = "visible";
+		if (panel == "Panel6") {
+		    document.getElementById('RequiredTextMessage').style.visibility = "hidden";
+		    document.getElementById('ReportsTextMessage').style.visibility = "visible";
+		} else {
+		    document.getElementById('ReportsTextMessage').style.visibility = "hidden";
+		    document.getElementById('RequiredTextMessage').style.visibility = "visible";
+		}
+		
+		if (panel == "Panel1") {
+			document.getElementById('lstStudyArmSchedule').style.visibility = "visible";
+			document.getElementById('lstStudyArm').style.visibility = "visible";
+			document.getElementById('lstNonEnrollment').style.visibility = "visible";
+			document.getElementById('lstSite').style.visibility = "visible";
+			document.getElementById('lstOff').style.visibility = "visible";
+		} else {
+		    document.getElementById('lstStudyArmSchedule').style.visibility = "hidden";
+		    document.getElementById('lstStudyArm').style.visibility = "hidden";
+			document.getElementById('lstNonEnrollment').style.visibility = "hidden";
+			document.getElementById('lstSite').style.visibility = "hidden";
+			document.getElementById('lstOff').style.visibility = "hidden";
+		}
+		
+		if (panel == "Panel2") {
+		    document.getElementById('lstDoctor').style.visibility = "visible";
+		} else {
+		    document.getElementById('lstDoctor').style.visibility = "hidden";
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		document.getElementById("_" + panel).style.color="red";
+
+		}catch(Exception){
+
+		//alert(Exception);
+		    var idfield = document.getElementById("Message");
+		    if (idfield) { 
+		        var id = idfield.innerHTML.replace("Login:", "");
+		        document.forms[0].action = page + 'Module=6&NavIndex=1&DefaultPanel=' + panel;
+		        //document.forms[0].submit();
+		    }
+		    else {
+		        alert("Please select from Participant List' or click 'Find Login' first");
+		    }
+		}	
+		
+	};
+
+	function getPIN(e){
+	
+	
+		var keycode;
+		
+		
+		if (window.event){
+			keycode = window.event.keyCode;
+			// I.E Browsers
+		}else if (e) {
+			keycode = e.which;
+			// Netscape
+		}else {
+			alert("Nothing");
+			return true;
+		}
+
+		if (keycode == 13){
+			gotoModule('Module=6&NavIndex=-3');
+			return true;
+		}else{
+			
+			return true;
+		}
+		
+		
+	}
+	function goRegistration(obj){
+	
+		
+		if(typeof(obj) == 'undefined'){
+
+			gotoModule('Module=6&NavIndex=-3');
+			return;
+		}
+		gotoModule('Module=6&Action=' + obj + '&NavIndex=-3');
+		return;
+		
+	}
+	function goLogin(){
+		gotoModule('Module=1');
+		
+	}
+	function goLogin2(){
+
+		var keycode;
+		var e;
+		
+		if (window.event){
+			keycode = window.event.keyCode;
+
+			// I.E Browsers
+		}else if (e) {
+			keycode = e.which;
+			// Netscape
+		}else {
+			//alert("Nothing");
+			return true;
+		}
+
+		if (keycode == 13){
+			
+			goLogin();
+			return true;
+		
+		}else{
+			
+			return true;
+		}
+
+}
+function switchPlusMinus(menuobj, imgobj) {
+    var menuEl = document.getElementById(menuobj);
+    if (menuEl.style.display != 'none') {
+        menuEl.style.display = 'none';
+    }
+    else {
+        menuEl.style.display = '';
+    }
+
+    var imgEl = document.getElementById(imgobj);
+    if (imgEl.attributes['className'].value == 'Collapsed') {
+        imgEl.src = 'images/minus.gif';
+        imgEl.attributes['className'].value = 'Expanded'
+    }
+    else if (imgEl.attributes['className'].value == 'Expanded') {
+        imgEl.src = 'images/plus.gif';
+        imgEl.attributes['className'].value = 'Collapsed'
+    } else {
+        imgEl.src = 'images/plus.gif';
+        imgEl.attributes['className'].value = 'Collapsed'
+    }
+}
+
+	function goHome(){
+		gotoModule('Module=1&Action=home&NavIndex=-1');
+	}
+	
+	function logOut(){
+		gotoModule('Module=0');
+}
+
+function logOutStudy() {
+
+    if (confirm(msgExit)) {
+        gotoModule('Module=0&Action=StudyRedirect');
+    }
+
+}
+
+function displayReport(ReportID, xOID, accrualOID) {
+    
+    if (typeof(xOID) == 'undefined') {
+        if (typeof(document.forms[0].lstStudy) != 'undefined' && document.forms[0].lstStudy.value != '')
+            xOID = document.forms[0].lstStudy.value; 
+        else return;
+    }
+
+    var loc = "";
+    if (ReportID != 'AO Report') {
+        loc = "ReportDisplay2.aspx?ReportID=" + ReportID + "&StudyOID=" + xOID + "&rnd=" + Math.random();
+    }
+    else {
+        loc = "jReport.html?ReportID=" + ReportID + "&StudyOID=" + xOID + "&rnd=" + Math.random();
+    }
+    
+    if (typeof(accrualOID) != 'undefined') loc += "&AccrualOID=" + accrualOID;
+
+    repWindow = window.open(loc, 'myReportWin', 'toolbar=no,menubar=no,resizable=yes,directories=no,location=no,scrollbars=yes,width=800,height=600');
+}
+
+	function goReports(){
+		gotoModule('Module=7&NavIndex=-4');
+	}
+	function getForm(position){
+		gotoModule('Module=13&Action=jump&NavIndex=' + (position-1));
+	}
+
+/*
+function gotoModule2(link){
+
+	if(document.forms[0].lstStudy != null){
+		document.forms[0].lstStudy.disabled = false;
+		document.forms[0].lstStudyArm.disabled = false;
+	}
+
+
+
+	var rtn = true;
+
+	var els = document.forms[0].elements;
+		
+
+	var displayMSG = false;
+	
+	
+	
+
+		for(i = 0;i< els.length; i++){
+
+
+				//if(els[i].className == "OptionalChoices"){
+				//	continue; 
+				//}
+
+
+				// *************** TEXT BOX *********************** //
+				if(els[i].type == "text"){
+
+
+				if(els[i].value == ""){
+					//formatValidation(els[i].name);
+					displayMSG = true;
+				}else{
+					//unformatValidation(els[i].name);
+				}
+				}
+				// **************** TEXT BOX *********************** //
+				
+	
+				// **************** DROP-DOWN LIST **************** //
+				if(els[i].type == "select-one"){
+				if(els[i].selectedIndex < 1){
+					//formatValidation(els[i].name);
+					displayMSG = true;
+				}else{
+					//unformatValidation(els[i].name);
+				}
+				}			
+				// ************** DROP-DOWN LIST ***************** //
+
+
+				// ***************** RADIO *********************** //
+				if(els[i].type == "radio"){
+					
+
+					try{
+
+						var myRadio = document.forms[0][els[i].name];
+						var displayMSG2 = true;
+
+						for(j=0;j< myRadio.length; j++){
+
+							if (myRadio[j].checked){
+								displayMSG2 = false;
+								
+							}
+
+						}
+
+						if(displayMSG2 == true){
+							displayMSG = true;
+						}
+					
+
+
+					}catch(e){
+						
+						displayMSG = false;
+						rtn = true;
+					}
+				}
+				// ***************** RADIO *********************** //
+
+			
+
+		}
+
+
+
+		if(displayMSG){
+			
+			input_box = displayConfirm(); //confirm(MSG_SKIP);
+	
+		
+			if (input_box == true){
+				rtn = true;
+			}else{
+				rtn = false;
+			}
+		}
+
+
+
+	if(rtn == true){
+		document.forms[0].action = page + link;
+		document.forms[0].submit();
+	}
+
+
+}
+*/
+
+function unformatValidation(fldName){
+
+	var mySpan;
+
+
+	mySpan = document.getElementById(fldName.replace(":","_") + "span");
+				
+	//if(mySpan.innerHTML.indexOf("*") > 0){
+	//	mySpan.innerHTML = mySpan.innerHTML.substring(0, mySpan.innerHTML.length -1);  
+
+		mySpan.style.color="black";
+					
+	//}
+
+}
+
+function formatValidation(fldName){
+
+	var mySpan;
+
+
+	mySpan = document.getElementById(fldName.replace(":","_") + "span");
+				
+	//if(mySpan.innerHTML.indexOf("*") == -1){
+	//	mySpan.innerHTML += "*";
+		mySpan.style.color="red";
+					
+	//}
+
+
+}
+
+
+function setLocale(language){
+			
+	document.getElementById('locale').value = language;
+	document.forms[0].submit();
+			
+}
+
+function goForgotPassword() 
+{
+	if(document.forms[0].txtUID.value == "")
+	{
+		alert('Please enter User Id');
+	}
+	else
+	{
+		gotoModule('Module=0&Action=ForgotPassword&NavIndex=-3');
+	}
+}
+
+function goUserRegistration(regType) {
+	//alert(regType);
+
+	if (regType == 'NEW') {	
+		createUserRegistration();
+	}
+	else if (regType == 'EDIT') {
+		updateUserRegistration();
+	}
+
+}
+
+function updateUserRegistration() {
+	gotoModule('Module=14');
+	//gotoModule('Module=6&Action=' + obj + '&NavIndex=-3');
+}
+
+function createUserRegistration() {
+    //regWindow = window.open("Modules/UserRegistration.aspx",'newUserRegWin','toolbar=no,menubar=no,resizable=no,directories=no,location=no,scrollbars=no'); 
+	//regWindow = window.open("Modules/UserRegistration.aspx",'myPasswordWin'); 
+	gotoModule('Module=15');
+}
+
+
+function showModalWinProps(url, name, properties)
+{
+    if (window.showModalDialog) 
+    {
+        return window.showModalDialog(url, window, properties + ",name=" + name);
+    } 
+    else {
+        return window.open(url, name, properties + ',modal=yes');
+    }
+}
+
+function showWin(url, name, properties)
+{
+    return window.open(url,name, properties);
+}
+
+function showModalWin(url,name, pxheight, pxwidth) {
+
+    return showModalWinProps(url, name, 'toolbar=no,menubar=no,resizable=no,directories=no,location=no,scrollbars=no,width=' + pxwidth + 'px,height=' + pxheight +'px');
+
+    }
+
+    function showAcceptTerms(TermsOID, ClientStudyOID, UserOID, ReturnLink) {
+
+        var url = 'Modules/TermsAndConditions.aspx?TermsConditionsOID=' + TermsOID
+
+        if (ClientStudyOID != undefined && ClientStudyOID != '')
+            url += '&ClientStudyOID=' + ClientStudyOID;
+
+        if (UserOID != undefined && UserOID != '')
+            url += '&ConsentingUserOID=' + UserOID;
+
+        if (ReturnLink != undefined && ReturnLink != '')
+            url += '&ReturnLink=' + ReturnLink;
+
+        var newLightbox = new lightbox(null);
+  
+        newLightbox.content = url;
+
+        newLightbox.activate();
+
+        //return showModalWin(url, 'Terms and Conditions', 900, 400);
+
+        //             'Width=900,Height=450, resizable=1, scrollbars=1, directories=0, menubar=0, status=1;');
+
+
+
+    }
+   
+    function acceptTerms(TermsConditionsOID, ClientStudyOID, ConsentingUserOID, ReturnLink) {
+        var UrlExtension = "&TermsConditionsOID=" + TermsConditionsOID + "&ClientStudyOID=" + ClientStudyOID + "&ConsentingUserOID=" + ConsentingUserOID;
+        new Ajax.Request("Modules/TermsConditionsHandler.ashx?UrlExtension=" + UrlExtension,
+            {
+                method: 'get',
+                parameters: {},
+                onSuccess: function(transport) {
+                if (transport.responseText == "Success") {
+                    gotoModule(ReturnLink + "&Action=ACCEPTTERMS");
+                }
+                    
+                },
+                onFailure: function() { gotoModule(ReturnLink + "&Action=ACCEPTTERMS"); ; }
+            }
+            );        
+    }
+
+
+    function CreateBookmarkLink(url, title) {
+        try { // Fancy-dan new mozilla system, which doesn't really seem to work.
+            var ios = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
+            var uri = ios.newURI(url, null, null);
+            if (getBookmarkedURIFor(uri) == null) // not yet bookmarked.
+            {
+                var bmsvc = Components.classes["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Components.interfaces.nsINavBookmarksService);
+
+                var folderName = "Assessments";
+                var newFolderId = getChildFolder(bmsvc.bookmarksMenuFolder, folderName);
+                if (newFolderId == 0) // Assessments folder not yet created.
+                    newFolderId = bmsvc.createFolder(menuFolder, folderName, bmsvc.DEFAULT_INDEX);
+
+                var newBkmkId = bmsvc.insertBookmark(newFolderId, uri, bmsvc.DEFAULT_INDEX, title);
+            }
+        }
+        catch (err) {
+            if (window.external && document.all)  // IE Favorite
+                window.external.AddFavorite(url, title);
+            else if (window.sidebar && window.sidebar.addPanel)  // Mozilla Firefox Bookmark
+                window.sidebar.addPanel(title, url, ""); //obsolete from FF 23
+            else if (window.opera && window.print) { // Opera Hotlist
+                var elem = document.createElement('a');
+                elem.setAttribute('href', url);
+                elem.setAttribute('title', title);
+                elem.setAttribute('rel', 'sidebar');
+                elem.click();
+            }
+            else alert("Sorry, your browser does not support this functionality. It has been tested with most versions of Internet Explorer and Firefox.");
+        }
+    }
+
+function PdfLinkClick(PdfUrl, Endorsed) {
+    if (Endorsed=='True')
+        window.open(PdfUrl);
+    else {       
+        alert("You must agree to a study's Terms & Conditions before opening a PDF. Please click on the \u00A9 symbol to read and endorse the Terms & Conditions");
+        return;  
+    }
+}
+
+    function IsNumeric(strString)
+    //  check for valid numeric strings	
+    {
+        var strValidChars = "0123456789.-";
+        var strChar;
+        var blnResult = true;
+
+        if (strString.length == 0) return false;
+
+        //  test strString consists of valid characters listed above
+        for (i = 0; i < strString.length && blnResult == true; i++) {
+            strChar = strString.charAt(i);
+            if (strValidChars.indexOf(strChar) == -1) {
+                blnResult = false;
+            }
+        }
+        return blnResult;
+    }
+
+    function expand(divID, elem) {
+        if (document.getElementById(divID).style.display == "none") {
+            elem.innerHTML = elem.innerHTML.replace("+", "-");
+            document.getElementById(divID).style.display = "block";
+        }
+        else {
+            elem.innerHTML = elem.innerHTML.replace("-", "+");
+            document.getElementById(divID).style.display = "none";
+        }
+    }

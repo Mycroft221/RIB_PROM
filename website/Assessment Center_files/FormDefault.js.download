@@ -1,0 +1,229 @@
+
+Event.observe(document, 'keydown', respondToEnter);
+
+function respondToEnter(event) {
+    if (event.keyCode == 13) {
+        $('btnNext').click();
+        Event.stop(event);
+    }
+}
+function combineBitwise(obj) {
+        var currentSum = document.getElementById(obj.name).value;
+        var addOrSub = (obj.checked) ? 1 : -1;
+        alert("currentSum=" + currentSum + " addOrSub=" + addOrSub);
+        if (isNaN(currentSum) || currentSum == '')
+            currentSum = parseInt(obj.attributes['Description'].value);
+        else
+            currentSum = parseInt(currentSum) + addOrSub * parseInt(obj.attributes['Description'].value);
+
+        document.getElementById(obj.name).value = (currentSum == 0) ? '' : currentSum;
+}
+
+
+function goModule(link, requireAnswer, inputMessage, skipValidation) {
+
+    var CUSTOM_MESSAGE = inputMessage;
+    //msgSkip is appended to the xsl in Default.aspx.cs
+    var UNANSWEREDMSG = msgSkip;
+    var UNANSWEREDMSG_NOSKIP = "Please provide a response"; // a "mock" message to prove that the database (X_FormValidation) is overriding the default message.
+                                                     // ^ no period on the javascript version of the message is INTENTIONAL!
+    // DON'T ADD A PERIOD! If you're getting this message, it means that
+    // the stylesheet isn't passing through the validation message from the database. 
+    // Fix the stylesheet! DON'T ADD A PERIOD TO THE UNANSWEREDMSG_NOSKIP message.
+    
+    // The other possibility if the period is missing is that the validation is a required field, but provides no message.
+
+    if (requireAnswer == undefined && skipValidation == undefined)
+        skipValidation = true;
+        
+    if (requireAnswer == undefined)
+        requireAnswer = false;
+    if (skipValidation == undefined)
+        skipValidation = false;
+
+    if (inputMessage == undefined || inputMessage == "") { // almost always left undefined, since that was the default. 
+                                                           // Put in to allow the stylesheet to override the message.
+        if (requireAnswer)
+            CUSTOM_MESSAGE = UNANSWEREDMSG_NOSKIP;
+        else
+            CUSTOM_MESSAGE = UNANSWEREDMSG;
+    }
+    
+    if (skipValidation) {  
+            CUSTOM_MESSAGE = "";                  
+     }            
+        
+    
+    var rtn = true;
+    var els = document.forms[0].elements;
+    var displayMSG = "";
+
+
+    if (link.indexOf("Action=Next") > 1) // this wraps the entire FOR loop. Thus we skip validation unless we're moving forward.
+                                         // The displayMSG is never overwritten by the Custom message, and we get no validation pop-up.
+        for (i = 0; i < els.length && displayMSG == ""; i++) {
+            //alert(els[i].type + " " + els[i].value);
+
+            // *************** TEXT BOX *********************** //
+
+
+
+            if (els[i].type == "textarea" || els[i].type == "text") {
+                var tooManyChars = els[i].value.length - 1023;
+                if (tooManyChars > 0)
+                    displayMSG = "Comments longer than 1000 characters may be truncated. \r\rYou are " + tooManyChars + " over the limit.\r\rClick 'OK' if you want to continue.\rClick 'Cancel' if you want to revise your answer this question.";               
+                if (els[i].value == "")
+                    displayMSG = CUSTOM_MESSAGE;
+            }
+
+            if (els[i].type == "text") {
+                if (els[i].attributes['class'] != undefined) {
+                    if (els[i].attributes['class'].value == "Numeric") {
+                        if (els[i].value != "") {
+                            if (isNumeric(els[i].value) == false) {
+                                displayMSG = "Please enter a number.";
+                                requireAnswer = true; 
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if (els[i].type == "hidden") {
+                if (els[i].attributes['class'] != undefined) {
+                    //alert("hidden field found value: " + els[i].value + "className: " + els[i].attributes['className'].value );
+                    if (els[i].attributes['class'].value == "Date") {
+                        if ((document.getElementById(els[i].id + 'txtMonth').value != "00") || (document.getElementById(els[i].id + 'txtDay').value != "00") || (document.getElementById(els[i].id + 'txtYear').value != "0000")) {
+
+                            if ((document.getElementById(els[i].id + 'txtMonth').value == "00") || (document.getElementById(els[i].id + 'txtDay').value == "00") || (document.getElementById(els[i].id + 'txtYear').value == "0000")) {
+                                alert("Please enter all three fields: month, date, year");
+                                return true;
+                            }
+                        }
+                        getDate(els[i].id);
+                    } else if (els[i].attributes['class'].value == "HiddenDataEntry" && els[i].value == "") {
+                        displayMSG = CUSTOM_MESSAGE;
+                    }
+                }        
+            }
+
+
+            // **************** DROP-DOWN LIST **************** //
+            if (els[i].type == "select-one" && els[i].selectedIndex < 1) {
+                displayMSG = CUSTOM_MESSAGE;
+            }
+
+            // ***************** RADIO *********************** //
+            if ((els[i].type == "radio") || (els[i].type == "checkbox")) {
+
+
+                try {
+
+                    var myRadio = document.forms[0][els[i].name];
+                    var displayMSG2 = true;
+
+                    if (myRadio.length == undefined) // myRadio is a single item, not an array
+                        if (myRadio.checked)
+                            displayMSG2 = false;
+                       
+                            
+
+                    for (j = 0; (j < myRadio.length) && displayMSG2; j++) {
+
+                        if (myRadio[j].checked) 
+                            displayMSG2 = false;                  
+
+                    }
+
+                    if (displayMSG2 == true) {
+                        displayMSG = CUSTOM_MESSAGE;
+                    }
+
+
+
+                } catch (e) {
+
+                    displayMSG = "";
+                    rtn = true;
+                }
+            }
+
+
+        }
+
+
+    /* moved to the top of the script */
+//    if (requireAnswer == undefined)
+//        requireAnswer = false;
+        
+    if (displayMSG != "") { // if the empty string is passed in to this function, it will skip prompting.
+        if (requireAnswer) { // if required, display an alert (OK only). If not, use a Confirm box (OK or Cancel).
+            rtn = false;
+            /* these are no longer required, since the CUSTOM_MESSAGE overrides everything. */
+//            if (displayMSG == UNANSWEREDMSG)
+//                displayMSG = UNANSWEREDMSG_NOSKIP;
+            alert(displayMSG);
+        } else rtn = confirm(displayMSG);
+    }
+
+
+
+
+    if (rtn == true) {
+
+        if (typeof (txtPIN) != 'undefined')
+            if (txtPIN != "")
+                link += "&txtPIN=" + txtPIN;
+
+        if (document.location.toString().indexOf("ProofSheet.aspx") > 1) {
+            document.forms[0].action = "?" + link;
+        } else document.forms[0].action = "Action.aspx?" + link;
+
+        document.forms[0].submit();
+    } else {
+        displayMSG = "";
+    }
+
+
+
+}
+
+function getDate(id) {
+
+    var date = new Date();  
+    
+    date.setFullYear(document.getElementById(id + 'txtYear').value,document.getElementById(id + 'txtMonth').value-1,document.getElementById(id + 'txtDay').value);
+  
+     
+    document.getElementById(id).value = date.toDateString().substring(4);
+//    alert(date.toDateString().substring(4));
+
+   // document.getElementById(id).value = document.getElementById(id + 'txtYear').value + '-' + document.getElementById(id + 'txtMonth').value + '-' + document.getElementById(id + 'txtDay').value;
+  
+}
+
+function isNumeric(sText) {
+
+
+    var ValidChars_first = "-0123456789.";
+    var ValidChars = "0123456789.";
+    var Char;
+
+    Char = sText.charAt(0);
+    if (ValidChars_first.indexOf(Char) == -1) 
+        return false;
+    
+
+
+    for (j = 1; j < sText.length; j++) {
+
+        Char = sText.charAt(j);
+        if (ValidChars.indexOf(Char) == -1) 
+            return false;
+        
+    }
+
+    return true;
+
+}
+

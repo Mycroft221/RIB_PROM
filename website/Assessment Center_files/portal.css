@@ -1,0 +1,775 @@
+
+
+
+/* PAGE BACKGROUND */
+/* background color for the header at the top of the page  */
+.HeadBg {
+   
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    color:DarkRed;
+    font-weight:bold;
+     
+}
+
+/* background color for the content part of the pages */
+html, body {
+   color: #333333;
+   font-family: arial, helvetica, sans-serif, veranda;
+   font-size: 90%;
+   margin: 0;
+   padding: 0;
+}
+
+
+/* PAGE BANNER */
+/* NOTE: Site Title, Site Links and Tabs are rendered by MobilePortalBanner.ascx
+/* style for the text of the site title */
+.SiteTitle {
+    font-family: Verdana Bold, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:black
+}
+
+/* background/border colors for the selected tab */
+.TabBg {
+    background-color: white;
+    border-color: white;
+}
+
+/* background/border colors for the unselected tabs */
+.OtherTabsBg {
+    background-color: dimgray;
+    border-color: black;
+}
+
+/* text style for the selected tab */
+.SelectedTab {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    color:DarkRed;
+    font-weight: bold
+}
+
+/* text style for the unselected tabs */
+.OtherTabs {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    color:gainsboro;
+    text-decoration:none;
+    font-weight: bold
+}
+
+/* hyperlink styles of the unselected tabs */
+A.OtherTabs:link    {
+    text-decoration:    none;
+    color:#eeeeee;
+}
+
+A.OtherTabs:visited {
+    text-decoration:    none;
+    color:#eeeeee;
+}
+
+A.OtherTabs:active  {
+    text-decoration:    none;
+    color:#eeeeee;
+}
+
+A.OtherTabs:hover   {
+    text-decoration:    underline;
+    color:white;
+}
+
+/* text style for the site links (at extreme top-right of header) */
+.SiteLink {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold
+}   
+
+/* hyperlink style for the site links */
+A.SiteLink:link {
+    text-decoration:    none;
+    color:white;
+}
+
+A.SiteLink:visited  {
+    text-decoration:    none;
+    color:#eeeeee;
+}
+
+A.SiteLink:active   {
+    text-decoration:    none;
+    color:#eeeeee;
+}
+
+A.SiteLink:hover    {
+    text-decoration:    underline;
+    color:white;
+}
+
+/* style for separator between site links */
+.Accent
+{
+    color: red;
+    font-weight:    bold;
+}
+
+
+
+/* MODULE-SPECIFIC */
+/* text style for reading messages in Discussion */    
+.Message    {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    font-size: 11px;
+    background-color: #eeeeee
+}   
+
+/* style of item titles by Announcements and events */
+.ItemTitle    {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  11px;
+    font-weight:    bold;
+    color: darkred;
+}
+
+
+
+/* GENERAL */
+/* style for module titles */
+.Head   {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  20px;
+    font-weight:    normal;
+    color: #666644;
+}
+
+/* style of item titles on edit and admin pages */
+.SubHead    {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  11px;
+    font-weight:    bold;
+    color: darkred;
+}
+
+/* module title style used instead of Head for compact rendering by QuickLinks and Signin modules */
+.SubSubHead {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  16px;
+    font-weight:    bold;
+    color: black;
+}
+
+.Choices
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    
+}
+
+/* text style used for most text rendered by modules */
+.Normal
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal; 
+}
+
+.NormalFaded
+{
+	font-size: 16px;
+	color: gray;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-weight: normal; 
+}
+
+
+
+/* text style used for textboxes in the admin and edit pages, for Nav compatibility */
+.NormalTextBox
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.NormalRed
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+   
+}
+
+.NormalWhite
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: white
+}
+
+.NormalBold
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold
+}
+
+/* text style for buttons and link buttons used in the portal admin pages */
+.CommandButton     {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+}
+    
+/* hyperlink style for buttons and link buttons used in the portal admin pages */
+A.CommandButton:link {
+    text-decoration:    underline;
+    color: darkred;
+}
+
+A.CommandButton:visited  {
+    text-decoration:    underline;
+    color: darkred;
+}
+
+A.CommandButton:active   {
+    text-decoration:    underline;
+    color: darkred;
+}
+
+A.CommandButton:hover    {
+    text-decoration:    underline;
+    color: red;
+}
+    
+
+
+
+/* GENERIC */
+H1  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  20px;
+    font-weight:    normal;
+    color: #666644;
+}
+
+H2  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  20px;
+    font-weight:    normal;
+    color: #666644;
+}
+
+H3  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    font-weight:    normal;
+    color: darkred;
+}
+
+H4  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    font-weight:    normal;
+    color: darkred;
+}
+
+H5, DT  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  11px;
+    font-weight:    bold;
+    color: darkred;
+}
+
+H6  {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  11px;
+    font-weight:    bold;
+    color: darkred;
+}
+
+TFOOT, THEAD    {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    color: darkred;
+}
+
+TH  {
+    vertical-align: baseline;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    font-weight:    bold;
+    color: darkred;
+}
+
+A {
+	
+	font-size:  12px;
+    font-weight:    bold;
+}
+
+A:link  {
+    text-decoration:    none;	
+    
+}
+
+A:visited   {
+    text-decoration:    none;
+    color:  darkred;
+}
+
+A:active    {
+    text-decoration:    none;
+    color:  darkred;
+}
+
+A:hover {
+    text-decoration:    underline;
+    color:  red;
+}
+
+SMALL   {
+    font-size:  8px;
+}
+
+BIG {
+    font-size:  14px;
+}
+
+BLOCKQUOTE, PRE {
+    font-family:    Lucida Console, monospace;
+}
+
+
+UL LI   {
+    list-style-type:    square ;
+}
+
+UL LI LI    {
+    list-style-type:    disc;
+}
+
+UL LI LI LI {
+    list-style-type:    circle;
+}
+
+OL LI   {
+    list-style-type:    decimal;
+}
+
+OL OL LI    {
+    list-style-type:    lower-alpha;
+}
+
+OL OL OL LI {
+    list-style-type:    lower-roman;
+}
+
+HR {
+    color: dimgrey;
+    height:1pt;
+    text-align:left
+}
+
+IMG.HandCursor 
+{
+	cursor: hand;
+}
+
+DIV.divWithBorder {
+	border: 1px solid #326d8f;
+}
+
+
+.ctlProcess{
+	visibility:hidden;
+	height:1px;
+	width:1px;
+}
+
+.ctlEdit{
+	COLOR: black;
+   	 FONT-FAMILY: Arial;
+   	 FONT-SIZE: 11px;	
+}
+
+.ctlViewOnly{
+    	FONT-FAMILY: Arial;
+    	FONT-SIZE: 11px;	
+	BACKGROUND-COLOR: lightgrey;
+
+}
+.ctlMessage{
+	COLOR:red;
+	font: size:16; 
+	WIDTH:450px;
+	Border:0px;
+}
+.ctlMessage1{
+	COLOR:red;
+	height:22px;
+	Border:0px;
+}
+.ctlChoices{
+	FONT-FAMILY: Arial;
+	COLOR:black;
+	FONT-SIZE: 16px;	
+	--font-weight:bold;
+	/*	
+	 height:85px; 
+	  width:140px; 
+	*/ 
+}
+
+.ctlNote{
+	FONT-FAMILY: Arial;
+	COLOR:black;
+	FONT-SIZE: 12px;	
+	
+}
+.ctlClear{
+	FONT-FAMILY: Arial;
+	FONT-SIZE: 16px;
+	COLOR:Blue;
+	text-decoration:    underline;
+	left:175px;
+	
+}
+.ctlNext{
+	FONT-FAMILY: Arial;
+	COLOR:black;
+	font: size:16px; 
+	height:75px;
+	font-weight:bold;		
+}
+.ctlQuestion{
+	FONT-FAMILY: Arial;
+	FONT-SIZE: 22px;
+	font-weight:bold;
+	
+}
+.NavBack {
+    
+   
+	Width : 140px;
+	
+}
+.ctlNavHeader
+{
+FONT-FAMILY:Arial;
+color:Navy;
+font-size:x-small;
+font-weight:bold;	
+width:125px;
+
+
+}
+.ctlNavHeaderAfterWindow
+{
+FONT-FAMILY:Arial;
+color:Red;
+font-size:x-small;
+font-weight:bold;	
+
+}
+.ctlNavHeaderBeforeWindow
+{
+FONT-FAMILY:Arial;
+color:Green;
+font-size:x-small;
+font-weight:bold;
+	
+}
+
+.ctlNavHeaderU
+{
+FONT-FAMILY:Arial;
+color:Navy;
+font-size:x-small;
+font-weight:bold;
+ border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;	
+}
+.ctlNavRegister
+{
+FONT-FAMILY:Arial;
+color:Navy;
+font-size:x-small;
+font-weight:bold;	
+cursor:hand;	
+cursor:pointer;
+
+}
+.ctlNavElement
+{
+FONT-FAMILY:Arial;
+color:Green;
+font-size:x-small;
+cursor:hand;	
+cursor:pointer;
+width:100%;
+
+}
+.ctlNavElementBeforeWindow
+{
+FONT-FAMILY:Arial;
+color:black;
+font-size:x-small;
+cursor:hand;	
+cursor:pointer;
+width:100%;
+
+}
+.ctlNavElementAfterWindow
+{
+FONT-FAMILY:Arial;
+color:Red;
+font-size:x-small;
+cursor:hand;	
+cursor:pointer;
+width:100%;
+
+}
+.ctlNavElementFinished
+{
+FONT-FAMILY:Arial;
+color:Green;
+font-size:x-small;
+text-decoration:line-through;
+cursor:hand;
+cursor:pointer;
+width:100%;	
+
+}
+.ctlNavElementFinishedBeforeWindow
+{
+FONT-FAMILY:Arial;
+color:black;
+font-size:x-small;
+text-decoration:line-through;
+cursor:hand;	
+cursor:pointer;
+width:100%;
+
+
+}
+.ctlNavElementFinishedAfterWindow
+{
+FONT-FAMILY:Arial;
+color:Red;
+font-size:x-small;
+text-decoration:line-through;
+cursor:hand;	
+cursor:pointer;
+width:100%;
+
+}
+
+.ctlNavGO
+{
+FONT-FAMILY:Arial;
+color:black;
+font-size:x-small;
+width:25px;
+height:20px;	
+}
+.ctlNavText
+{
+FONT-FAMILY:Arial;
+color:black;
+font-size:x-small;
+width:50px;
+height:20px;	
+}
+
+.Help 
+{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 16;
+	
+	
+}
+.AssessmentTable
+{
+	display:none;
+	/*
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	*/
+	
+}
+.AssessmentTable2
+{
+	display:block;
+	/*
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	*/
+	
+}
+#LeftPane_Patient
+{
+
+}
+#ContentPane_Patient
+{
+
+/*
+	 border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+*/
+}
+
+#LeftPane_Nav
+{
+
+}
+.Event_Header  {
+    vertical-align: baseline;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    font-weight:    bold;
+    color: Green;
+    width:100%;
+    background-color:LightGrey;
+    cursor:hand;	
+    
+}
+.Event_Header_After  {
+    vertical-align: baseline;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    color: Red;
+    width:100%;
+    background-color:LightGrey;
+    cursor:hand;	
+    
+}
+.Event_Header_Before  {
+    vertical-align: baseline;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size:  12px;
+    color: Black;
+    width:100%;
+    background-color:LightGrey;
+    cursor:hand;	
+    
+}
+#LeftPane_User
+{
+
+}
+#ContentPane_User
+{
+	/*
+	left:175px;
+	width:620px;
+	height : 365px;
+	text-align:center;
+	
+	border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+	*/
+	
+}
+.FormPanel
+{
+	overflow :auto;
+/*	 BACKGROUND-COLOR:606BFA;   */
+/*
+	 border-right-color: black;
+	border-right-style:groove; 
+	border-right-width:thin;
+	border-left-color: black;
+	border-left-style:groove; 
+	border-left-width:thin;
+	border-bottom-color: black;
+	border-bottom-style:groove; 
+	border-bottom-width:thin;
+	border-top-color: black;
+	border-top-style:groove; 
+	border-top-width:thin;
+*/
+	
+}
+
+#Footer
+{
+	visibility:visible;
+	font-size : 16;
+	font-family : Arial, Helvetica, sans-serif;
+	color : #000000;
+}
+
+
+
+
+
+/*-----------------------------------------------------
+  Tab Styles
+-----------------------------------------------------*/
+
+html, body{
+	color: #333333;
+	font-family: arial, helvetica, sans-serif, verdana;
+	font-size: 90%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+
+
+/*-----------------------------------------------------
+  Second-level Tab Styles
+-----------------------------------------------------*/
+
+
+
+
+
+
+.tab2selected {
+	text-decoration: none;
+	color: #000000;
+	font-weight: bold;
+	height: 28px;
+	background: url(images/tab2selectedbd.jpg) repeat-x top left;
+	border-left: 1px solid #d0d0d0;
+	border-right: 1px solid #d0d0d0;
+	padding: 6px 10px 0px 10px;
+}
+/*-----------------------------------------------------
+  Navigation Pane Styles
+-----------------------------------------------------*/
