@@ -15,7 +15,7 @@ userId: string;
   login() : void {
     if(this.userId == '1696383'){
      this.apiService.setUserId(this.userId);
-     this.router.navigate(["survey"]);
+     this.router.navigate(["hrqol"]);
     }else {
       alert("Invalid credentials");
     }

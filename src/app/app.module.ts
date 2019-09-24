@@ -6,11 +6,12 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SurveyComponent } from './survey/survey.component';
+import { HrqolComponent } from './hrqol/hrqol.component';
 import { AppRoutingModule } from './core/app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatRadioModule
+  MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule, MatRadioModule
 } from '@angular/material';
 import { ApiService } from './api.service';
 import { HttpModule } from '@angular/http';
@@ -20,7 +21,8 @@ import { HttpModule } from '@angular/http';
     AppComponent,
     LoginComponent,
     SurveyComponent,
-    NavBarComponent
+    NavBarComponent,
+    HrqolComponent
   ],
   imports: [
     HttpModule,
@@ -30,7 +32,7 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCardModule,
     MatInputModule,
     MatDialogModule,
