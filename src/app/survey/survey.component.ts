@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 import { isString, isNumber } from 'util';
 
 @Component({
@@ -53,10 +54,10 @@ export class SurveyComponent implements OnInit {
     'Bed rest is not recommended, but neither is physically strenuous activity.',
     'While you heal, avoid movements that put painful pressure on your ribs.',
     'Your ribs have two main jobs: they protect the organs in your chest and they keep space open inside your chest for your lungs to fill up with air.',
-  ]
+  ];
 
-  constructor(private apiService: ApiService) { }
-  message:string = "Survey submitted successfully";
+  constructor(private router: Router, private apiService: ApiService) { }
+  message: string = 'Survey submitted successfully';
 
   ngOnInit() {
     this.currentInformativeMessage = this.informativeMessages[ Math.floor(Math.random() * this.informativeMessages.length) + 1  ]
@@ -79,5 +80,9 @@ export class SurveyComponent implements OnInit {
     }else {
       alert("Survey incomplete!");
     }
+  }
+
+  hrqol() : void {
+    this.router.navigate(["hrqol"]);
   }
 }

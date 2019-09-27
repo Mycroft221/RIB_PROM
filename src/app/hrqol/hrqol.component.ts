@@ -10,23 +10,16 @@ import { isString, isNumber } from 'util';
 export class HrqolComponent implements OnInit {
   chosenSpirometerMeasurement: string;
   spirometerMeasurements: string[] = [
-    '< 500 mL',
-    '500 - 750 mL',
-    '750 - 1000 mL',
-    '1000 - 1250 mL',
-    '1250 - 1500 mL',
-    '1500 - 1750 mL',
-    '> 1750 mL'
+    '1',
+    '2',
+    '3'
   ];
 
   chosenPainLevel: string;
   painLevels: string[] = [
-    '0 (No hurt)',
-    '2 (Hurts a little bit)',
-    '4 (Hurts a little more)',
-    '6 (Hurts even more)',
-    '8 (Hurts a lot)',
-    '10 (Hurts worst)'
+    '1',
+    '2',
+    '3'
   ];
 
   // add this
@@ -64,18 +57,9 @@ export class HrqolComponent implements OnInit {
 
   submit() : void {
     if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
-
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
-
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
+      const sum = Number(this.chosenPainLevel) + Number(this.chosenSpirometerMeasurement);
+      this.apiService.submitHrqol(sum);
+      alert("Sum is: " + sum);
     }else {
       alert("Survey incomplete!");
     }
