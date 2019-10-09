@@ -144,6 +144,231 @@ export class HrqolComponent implements OnInit {
     '5 - Very much'
   ];
 
+  chosenPainSocial: string;
+  painSocial: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainChores: string;
+  painChores: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainTrips: string;
+  painTrips: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainEnjoymentSocial: string;
+  painEnjoymentSocial: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainHousehold: string;
+  painHousehold: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainRemember: string;
+  painRemember: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainIrritable: string;
+  painIrritable: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainTasks: string;
+  painTasks: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainDepressed: string;
+  painDepressed: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainDistressing: string;
+  painDistressing: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainSocializing: string;
+  painSocializing: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainSevere: string;
+  painSevere: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainDiscouraged: string;
+  painDiscouraged: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainAnxious: string;
+  painAnxious: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainAvoid: string;
+  painAvoid: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainPrevent: string;
+  painPrevent: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainStanding: string;
+  painStanding: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainPlan: string;
+  painPlan: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainStandingMinutes: string;
+  painStandingMinutes: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainSittingMinutes: string;
+  painSittingMinutes: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainSittingTen: string;
+  painSittingTen: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+  
+  chosenPainSocialPain: string;
+  painSocialPain: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainSocialHome: string;
+  painSocialHome: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainPreventSitting: string;
+  painPreventSitting: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
+  chosenPainPreventStanding: string;
+  painPreventStanding: string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Somewhat',
+    '4 - Quite a bit',
+    '5 - Very much'
+  ];
+
   // add this
   // chosenTestOption: string;
   // options: string[] = [
