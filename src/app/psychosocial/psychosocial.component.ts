@@ -7,7 +7,7 @@ import { isString, isNumber } from 'util';
   templateUrl: './hrqol.component.html',
   styleUrls: ['./hrqol.component.css']
 })
-export class HrqolComponent implements OnInit {
+export class PsychosocialComponent implements OnInit {
   //Flag Evan Start
   chosenFeelFailureOne: string;
   feelFailureOne: string[] = [

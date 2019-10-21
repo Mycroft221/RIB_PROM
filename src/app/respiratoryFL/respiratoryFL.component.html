@@ -1,0 +1,282 @@
+<div style='margin-top: 5rem'>
+  <mat-card class="example-card">
+    
+    <mat-card-header>
+        <mat-card-title class="page-title">Please answer the following hrqol questions</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+          <table class="example-full-width" cellspacing="0" style="Margin-top:30px">
+            <tr>
+              <td>
+                <label id="dressing-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: dressing yourself without help.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDressing"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dressing of dressing" [value]="dressing">
+                    {{dressing}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-fifty-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking 50 steps/paces on flat ground at a normal speed without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingFifty"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingFifty of walkingFifty" [value]="walkingFifty">
+                    {{walkingFifty}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-twenty-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking up 20 stairs (2 flights) without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingTwenty"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingTwenty of walkingTwenty" [value]="walkingTwenty">
+                    {{walkingTwenty}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="dishes-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Washing dishes.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDishes"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dishes of dishes" [value]="dishes">
+                    {{dishes}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="bed-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Making a bed.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBed"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bed of bed" [value]="bed">
+                    {{bed}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="lifting-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Lifting something weighing 10-20 lbs (about 4.5-9kg, like a large bag of groceries).</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLifting"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lifting of lifting" [value]="lifting">
+                    {{lifting}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="carrying-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Carrying something weighing 10-20 lbs (about 4.5-9kg, like a large bag of groceries) from one room to another.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCarrying"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let carrying of carrying" [value]="carrying">
+                    {{carrying}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-mile-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking (faster than your usual speed) for 1/2 mile (almost 1 km) without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingMile"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingMile of walkingMile" [value]="walkingMile">
+                    {{walkingMile}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="bath-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Taking a bath without help.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBath"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bath of bath" [value]="bath">
+                    {{bath}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="socks-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Putting on socks or stockings.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSocks"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let socks of socks" [value]="socks">
+                    {{socks}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-ten-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking 10 steps/paces on flat ground at a normal speed without stoppping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingTen"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingTen of walkingTen" [value]="walkingTen">
+                    {{walkingTen}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-mile-two-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking 1/2 mile (almost 1 km) on flat ground at a normal speed without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingMileTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingMileTwo of walkingMileTwo" [value]="walkingMileTwo">
+                    {{walkingMileTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-five-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking up 5 stairs without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingFive"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingFive of walkingFive" [value]="walkingFive">
+                    {{walkingFive}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-thirty-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking up 30 stairs (3 flights) without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingThirty"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingThirty of walkingThirty" [value]="walkingThirty">
+                    {{walkingThirty}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="scrubbing-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Scrubbing the floor or counter.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenScrubbing"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let scrubbing of scrubbing" [value]="scrubbing">
+                    {{scrubbing}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="lifting-five-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Lifting something weighing less than 5 lbs (about 2 kg, like a houseplant).</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLiftingFive"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let liftingFive of liftingFive" [value]="liftingFive">
+                    {{liftingFive}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="lifting-twenty-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Lifting something weighing more than 20 lbs (about 9 kg, like a medium-sized suitcase).</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLiftingTwenty"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let liftingTwenty of liftingTwenty" [value]="liftingTwenty">
+                    {{liftingTwenty}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="leisure-low-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Low-intensity leisure activity (gardening, etc.).</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLeisureLow"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let leisureLow of leisureLow" [value]="leisureLow">
+                    {{leisureLow}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="leisure-mid-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Moderate-intensity leisure activity (bicycling on level terrain, etc.).</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLeisureMid"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let leisureMid of leisureMid" [value]="leisureMid">
+                    {{leisureMid}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-nonstop-mile-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Walking (faster than your usual speed) for at least 1 mile (a little more than 1.5 km) without stopping.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingNonstopMile"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingNonstopMile of walkingNonstopMile" [value]="walkingNonstopMile">
+                    {{walkingNonstopMile}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="talking-radio-group-label">Over the past 7 days rate your difficulty with shortness of breath while: Talking.</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTalking"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let talking of talking" [value]="talking">
+                    {{talking}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- add this
+                <label id="test-radio-group-label">This is a test question</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTestOption"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="testOption">
+                    {{option}}
+                  </mat-radio-button>
+                </mat-radio-group>
+                end-->
+
+                <!-- Flag Evan End-->
+
+              </td>
+            </tr>
+          </table>
+          <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <mat-card class="example-card" class="noshadow" style="Margin-top:30px; box-shadow: none">
+
+      <mat-card-header>
+          <mat-card-title class="page-title">Did you know that...</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+          <label id="spirometer-measurement-radio-group-label">{{currentInformativeMessage}}</label>
+      </mat-card-content>
+      
+    </mat-card>
+  
+</div>
