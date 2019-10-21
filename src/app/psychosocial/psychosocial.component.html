@@ -549,7 +549,7 @@
                   </mat-radio-button>
                 </mat-radio-group>
 
-                <label id="purpose-two-radio-group-label">My life lacks meaning, how true was this since your illness?</label>
+                <label id="question-two-radio-group-label">My life lacks meaning, how true was this since your illness?</label>
                 <mat-radio-group
                   aria-labelledby="example-radio-group-label"
                   class="example-radio-group"
@@ -557,6 +557,864 @@
                   style="Margin-bottom:30px">
                   <mat-radio-button class="example-radio-button" *ngFor="let questionTwo of questionTwo" [value]="questionTwo">
                     {{questionTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="comfortable-one-radio-group-label">I am comfortable with who I am, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenComfortableOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let comfortableOne of comfortableOne" [value]="comfortableOne">
+                    {{comfortableOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="comfortable-two-radio-group-label">I am comfortable with who I am, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenComfortableTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let comfortableTwo of comfortableTwo" [value]="comfortableTwo">
+                    {{comfortableTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="handle-one-radio-group-label">I believe I can handle problems, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHandleOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let handleOne of handleOne" [value]="handleOne">
+                    {{handleOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="handle-two-radio-group-label">I believe I can handle problems, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHandleTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let handleTwo of handleTwo" [value]="handleTwo">
+                    {{handleTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="confident-one-radio-group-label">I believe I am a confident person, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenConfidentOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let confidentOne of confidentOne" [value]="confidentOne">
+                    {{confidentOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="confident-two-radio-group-label">I believe I am a confident person, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenConfidentTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let confidentTwo of confidentTwo" [value]="confidentTwo">
+                    {{confidentTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="good-one-radio-group-label">I believe I am a good person, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenGoodOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let goodOne of goodOne" [value]="goodOne">
+                    {{goodOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="good-two-radio-group-label">I believe I am a good person, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenGoodTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let goodTwo of goodTwo" [value]="goodTwo">
+                    {{goodTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="body-one-radio-group-label">I appreciate the health of my body, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBodyOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bodyOne of bodyOne" [value]="bodyOne">
+                    {{bodyOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="body-two-radio-group-label">I appreciate the health of my body, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBodyTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bodyTwo of bodyTwo" [value]="bodyTwo">
+                    {{bodyTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="optimistic-one-radio-group-label">I am an optimistic person, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenOptimisticOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let optimisticOne of optimisticOne" [value]="optimisticOne">
+                    {{optimisticOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="optimistic-two-radio-group-label">I am an optimistic person, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenOptimisticTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let optimisticTwo of optimisticTwo" [value]="optimisticTwo">
+                    {{optimisticTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="going-one-radio-group-label">I keep going when problems arise, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenGoingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let goingOne of goingOne" [value]="goingOne">
+                    {{goingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="going-two-radio-group-label">I keep going when problems arise, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenGoingTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let goingTwo of goingTwo" [value]="goingTwo">
+                    {{goingTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="anything-one-radio-group-label">I can handle almost anything, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAnythingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let anythingOne of anythingOne" [value]="anythingOne">
+                    {{anythingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="anything-two-radio-group-label">I keep going when problems arise, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAnythingTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let anythingTwo of anythingTwo" [value]="anythingTwo">
+                    {{anythingTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="patient-one-radio-group-label">I believe I am a patient person, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPatientOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let patientOne of patientOne" [value]="patientOne">
+                    {{patientOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="patient-two-radio-group-label">I believe I am a patient person, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPatientTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let patientTwo of patientTwo" [value]="patientTwo">
+                    {{patientTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="anything-one-radio-group-label">I can handle almost anything, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAnythingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let anythingOne of anythingOne" [value]="anythingOne">
+                    {{anythingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="anything-two-radio-group-label">I can handle almost anything, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAnythingTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let anythingTwo of anythingTwo" [value]="anythingTwo">
+                    {{anythingTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="count-one-radio-group-label">I know who I can count on in times of trouble, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCountOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let countOne of countOne" [value]="countOne">
+                    {{countOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="count-two-radio-group-label">I know who I can count on in times of trouble, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCountTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let countTwo of countTwo" [value]="countTwo">
+                    {{countTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="compassion-one-radio-group-label">I have compassion for others, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCompassionOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let compassionOne of compassionOne" [value]="compassionOne">
+                    {{compassionOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="compassion-two-radio-group-label">I have compassion for others, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCompassionTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let compassionTwo of compassionTwo" [value]="compassionTwo">
+                    {{compassionTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="aware-one-radio-group-label">I am aware of the love and support available from other people, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAwareOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let awareOne of awareOne" [value]="awareOne">
+                    {{awareOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="aware-two-radio-group-label">I am aware of the love and support available from other people, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAwareTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let awareTwo of awareTwo" [value]="awareTwo">
+                    {{awareTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="realize-one-radio-group-label">I realize who my real friends are, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRealizeOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let realizeOne of realizeOne" [value]="realizeOne">
+                    {{realizeOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="realize-two-radio-group-label">I realize who my real friends are, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRealizeTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let realizeTwo of realizeTwo" [value]="realizeTwo">
+                    {{realizeTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="receiving-one-radio-group-label">I am comfortable receiving help from others, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenReceivingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let receivingOne of receivingOne" [value]="receivingOne">
+                    {{receivingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="receiving-two-radio-group-label">I am comfortable receiving help from others, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenReceivingTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let receivingTwo of receivingTwo" [value]="receivingTwo">
+                    {{receivingTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="appreciate-one-radio-group-label">I can appreciate people in my life, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAppreciateOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let appreciateOne of appreciateOne" [value]="appreciateOne">
+                    {{appreciateOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="appreciate-two-radio-group-label">I can appreciate people in my life, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAppreciateTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let appreciateTwo of appreciateTwo" [value]="appreciateTwo">
+                    {{appreciateTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="willing-one-radio-group-label">I am willing to help others, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWillingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let willingOne of willingOne" [value]="willingOne">
+                    {{willingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="willing-two-radio-group-label">I am willing to help others, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWillingTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let willingTwo of willingTwo" [value]="willingTwo">
+                    {{willingTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="family-one-radio-group-label">I make time for family and friends, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenFamilyOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let familyOne of familyOne" [value]="familyOne">
+                    {{familyOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="family-two-radio-group-label">I make time for family and friends, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenFamilyTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let familyTwo of familyTwo" [value]="familyTwo">
+                    {{familyTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="community-one-radio-group-label">I feel connected to people in my community, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCommunityOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let communityOne of communityOne" [value]="communityOne">
+                    {{communityOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="community-two-radio-group-label">I feel connected to people in my community, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCommunityTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let communityTwo of communityTwo" [value]="communityTwo">
+                    {{communityTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="care-one-radio-group-label">I feel close to people I care about, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCareOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let careOne of careOne" [value]="careOne">
+                    {{careOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="care-two-radio-group-label">I feel close to people I care about, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCareTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let careTwo of careTwo" [value]="careTwo">
+                    {{careTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="emotions-one-radio-group-label">I am willing to express my emotions, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenEmotionsOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let emotionsOne of emotionsOne" [value]="emotionsOne">
+                    {{emotionsOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="emotions-two-radio-group-label">I am willing to express my emotions, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenEmotionsTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let emotionsTwo of emotionsTwo" [value]="emotionsTwo">
+                    {{emotionsTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="care-one-radio-group-label">I feel close to people I care about, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCareOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let careOne of careOne" [value]="careOne">
+                    {{careOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="care-two-radio-group-label">I feel close to people I care about, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCareTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let careTwo of careTwo" [value]="careTwo">
+                    {{careTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="accept-one-radio-group-label">I am able to accept the way things work out, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAcceptOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let acceptOne of acceptOne" [value]="acceptOne">
+                    {{acceptOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="accept-two-radio-group-label">I am able to accept the way things work out, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAcceptTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let acceptTwo of acceptTwo" [value]="acceptTwo">
+                    {{acceptTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="uncertainty-one-radio-group-label">I can deal with uncertainty, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenUncertaintyOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let uncertaintyOne of uncertaintyOne" [value]="uncertaintyOne">
+                    {{uncertaintyOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="uncertainty-two-radio-group-label">I can deal with uncertainty, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenUncertaintyTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let uncertaintyTwo of uncertaintyTwo" [value]="uncertaintyTwo">
+                    {{uncertaintyTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="adjust-one-radio-group-label">I can adjust to things I cannot change, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAdjustOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let adjustOne of adjustOne" [value]="adjustOne">
+                    {{adjustOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="adjust-two-radio-group-label">I can adjust to things I cannot change, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAdjustTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let adjustTwo of adjustTwo" [value]="adjustTwo">
+                    {{adjustTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="take-one-radio-group-label">I am able to take things as they come, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTakeOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let takeOne of takeOne" [value]="takeOne">
+                    {{takeOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="take-two-radio-group-label">I am able to take things as they come, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTakeTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let takeTwo of takeTwo" [value]="takeTwo">
+                    {{takeTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="deal-one-radio-group-label">I am able to deal with stress and problems, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDealOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dealOne of dealOne" [value]="dealOne">
+                    {{dealOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="deal-two-radio-group-label">I am able to deal with stress and problems, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDealTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dealTwo of dealTwo" [value]="dealTwo">
+                    {{dealTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="tend-one-radio-group-label">I tend to be accepting of things, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTendOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let tendOne of tendOne" [value]="tendOne">
+                    {{tendOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="tend-two-radio-group-label">I tend to be accepting of things, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTendTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let tendTwo of tendTwo" [value]="tendTwo">
+                    {{tendTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="myself-one-radio-group-label">I take good care of myself, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenMyselfOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let myselfOne of myselfOne" [value]="myselfOne">
+                    {{myselfOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="myself-two-radio-group-label">I take good care of myself, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenMyselfTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let myselfTwo of myselfTwo" [value]="myselfTwo">
+                    {{myselfTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="look-one-radio-group-label">I look at things in a positive way, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLookOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lookOne of lookOne" [value]="lookOne">
+                    {{lookOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="look-two-radio-group-label">I look at things in a positive way, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLookTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lookTwo of lookTwo" [value]="lookTwo">
+                    {{lookTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="joy-one-radio-group-label">I am able to feel joy, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenJoyOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let joyOne of joyOne" [value]="joyOne">
+                    {{joyOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="joy-two-radio-group-label">I look at things in a positive way, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenJoyTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let joyTwo of joyTwo" [value]="joyTwo">
+                    {{joyTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="enjoy-one-radio-group-label">I am able to enjoy life, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenEnjoyOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let enjoyOne of enjoyOne" [value]="enjoyOne">
+                    {{enjoyOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="enjoy-two-radio-group-label">I am able to enjoy life, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenEnjoyTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let enjoyTwo of enjoyTwo" [value]="enjoyTwo">
+                    {{enjoyTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="day-one-radio-group-label">I can appreciate each day fully, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDayOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dayOne of dayOne" [value]="dayOne">
+                    {{dayOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="day-two-radio-group-label">I can appreciate each day fully, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDayTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let dayTwo of dayTwo" [value]="dayTwo">
+                    {{dayTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="life-one-radio-group-label">My life is meaningful, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLifeOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lifeOne of lifeOne" [value]="lifeOne">
+                    {{lifeOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="life-two-radio-group-label">My life is meaningful, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLifeTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lifeTwo of lifeTwo" [value]="lifeTwo">
+                    {{lifeTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="appreciate-life-one-radio-group-label">I appreciate life, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAppreciateLifeOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let appreciateLifeOne of appreciateLifeOne" [value]="appreciateLifeOne">
+                    {{appreciateLifeOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="appreciate-life-two-radio-group-label">I appreciate life, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAppreciateLifeTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let appreciateLifeTwo of appreciateLifeTwo" [value]="appreciateLifeTwo">
+                    {{appreciateLifeTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="sense-one-radio-group-label">I have a sense of purpose in life, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSenseOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let senseOne of senseOne" [value]="senseOne">
+                    {{senseOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="sense-two-radio-group-label">I have a sense of purpose in life, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSenseTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let senseTwo of senseTwo" [value]="senseTwo">
+                    {{senseTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="peaceful-one-radio-group-label">I feel peaceful, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPeacefulOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let peacefulOne of peacefulOne" [value]="peacefulOne">
+                    {{peacefulOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="peaceful-two-radio-group-label">I feel peaceful, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPeacefulTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let peacefulTwo of peacefulTwo" [value]="peacefulTwo">
+                    {{peacefulTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="peace-one-radio-group-label">I have a sense of peace, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPeaceOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let peaceOne of peaceOne" [value]="peaceOne">
+                    {{peaceOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="peace-two-radio-group-label">I have a sense of peace, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPeaceTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let peaceTwo of peaceTwo" [value]="peaceTwo">
+                    {{peaceTwo}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="important-one-radio-group-label">I see what is really important in my life, how true was this before your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenImportantOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let importantOne of importantOne" [value]="importantOne">
+                    {{importantOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="important-two-radio-group-label">I see what is really important in my life, how true was this since your illness?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenImportantTwo"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let importantTwo of importantTwo" [value]="importantTwo">
+                    {{importantTwo}}
                   </mat-radio-button>
                 </mat-radio-group>
 
