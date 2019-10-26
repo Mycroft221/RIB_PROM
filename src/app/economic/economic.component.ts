@@ -33,7 +33,7 @@ export class PsychosocialComponent implements OnInit {
   ];
 
   chosenDisabilityLong: string;
-  disability: string[] = [
+  disabilityLong: string[] = [
     '0 days',
     '1 day',
     '2 days',

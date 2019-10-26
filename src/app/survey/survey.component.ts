@@ -30,15 +30,6 @@ export class SurveyComponent implements OnInit {
     '10 (Hurts worst)'
   ];
 
-  // add this
-  chosenTestOption: string;
-  options: string[] = [
-    'testOpt1',
-    'testOpt2',
-    'testOpt3'
-  ];
-  // end
-
   currentInformativeMessage = '';
   informativeMessages: string[] = [
     'Don’t wrap anything tightly around your ribs while they’re healing. You don’t want anything to limit your breathing, which could lead to pneumonia.',
@@ -77,12 +68,16 @@ export class SurveyComponent implements OnInit {
 
       this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
       alert(this.message);
-    }else {
+    } else {
       alert("Survey incomplete!");
     }
   }
 
   hrqol() : void {
     this.router.navigate(["hrqol"]);
+  }
+
+  cat() : void {
+    this.router.navigate(["cat"]);
   }
 }

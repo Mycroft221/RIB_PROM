@@ -8,21 +8,6 @@ import { isString, isNumber } from 'util';
   styleUrls: ['./hrqol.component.css']
 })
 export class HrqolComponent implements OnInit {
-  chosenSpirometerMeasurement: string;
-  spirometerMeasurements: string[] = [
-    '1',
-    '2',
-    '3'
-  ];
-
-  chosenPainLevel: string;
-  painLevels: string[] = [
-    '1',
-    '2',
-    '3'
-  ];
-
-  //Flag Evan Start
 
   chosenHealthLevel: string;
   healthLevel: string[] = [
@@ -317,17 +302,6 @@ export class HrqolComponent implements OnInit {
     'Definitely false'
   ];
 
-  // add this
-  // chosenTestOption: string;
-  // options: string[] = [
-  //  'testOpt1',
-  //  'testOpt2',
-  //  'testOpt3'
-  //];
-  // end
-
-  //Flag Evan End
-
   currentInformativeMessage = '';
   informativeMessages: string[] = [
     'Don’t wrap anything tightly around your ribs while they’re healing. You don’t want anything to limit your breathing, which could lead to pneumonia.',
@@ -364,14 +338,16 @@ export class HrqolComponent implements OnInit {
     physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingOneBlock.substring(0, 1)) - 1) * 50;
     physicalFunctioning = physicalFunctioning + (Number(this.chosenBathing.substring(0, 1)) - 1) * 50;
     physicalFunctioning = physicalFunctioning / 10;
-    this.apiService.submitHrqol(physicalFunctioning);
-    alert("physicalFunctioning: " + physicalFunctioning);
-    if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
-      const sum = Number(this.chosenPainLevel) + Number(this.chosenSpirometerMeasurement);
-      this.apiService.submitHrqol(sum);
-      alert("Sum is: " + sum);
-    }else {
-      alert("Survey incomplete!");
-    }
+    let roleLimitationsPhysical = this.chosenCutWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenLimitedWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenDifficultyWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical / 4;
+    let roleLimitationsEmotional = this.chosenCutTimeWork === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenAccomplishedLessLiked === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenWorkNotAsCarefully === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional / 3;
+    this.apiService.submitHrqol(physicalFunctioning, roleLimitationsPhysical, roleLimitationsEmotional);
+    alert("Survey Submitted");
   }
 }

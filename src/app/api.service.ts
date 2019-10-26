@@ -14,8 +14,7 @@ export class ApiService {
   }
 
 
-  submitHrqol(score): boolean {
-    let success = false;
+  submitHrqol(physicalFunctioning, roleLimitationsPhysical, roleLimitationsEmotional): void {
     this.http.post(
       'https://hapi.fhir.org/baseDstu3/Observation?_format=json',
       { 
@@ -26,7 +25,7 @@ export class ApiService {
         "code": {
           "coding": [
             {
-              "display": "HRQOL"
+              "display": "Physical Functioning"
             }
           ]
         },
@@ -34,14 +33,63 @@ export class ApiService {
           "reference": "Patient/" + this.userId
         },
         "valueQuantity": {
-          "value": +score
+          "value": physicalFunctioning
         }
       }
       ).subscribe( response => {
-        success = response.ok;
         console.log("HRQOL response: ", response);
-      });
-      return success;
+      }
+    );
+    this.http.post(
+      'https://hapi.fhir.org/baseDstu3/Observation?_format=json',
+      { 
+        "resourceType": "Observation",
+        "meta": {
+          "versionId": "1"
+        },
+        "code": {
+          "coding": [
+            {
+              "display": "Physical Role Limitations"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/" + this.userId
+        },
+        "valueQuantity": {
+          "value": roleLimitationsPhysical
+        }
+      }
+      ).subscribe( response => {
+        console.log("HRQOL response: ", response);
+      }
+    );
+    this.http.post(
+      'https://hapi.fhir.org/baseDstu3/Observation?_format=json',
+      { 
+        "resourceType": "Observation",
+        "meta": {
+          "versionId": "1"
+        },
+        "code": {
+          "coding": [
+            {
+              "display": "Emotional Role Limitations"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/" + this.userId
+        },
+        "valueQuantity": {
+          "value": roleLimitationsEmotional
+        }
+      }
+      ).subscribe( response => {
+        console.log("HRQOL response: ", response);
+      }
+    );
   }
   submitSurvey(chosenSpirometerMeasurement, chosenPainLevel): boolean {
     const date = "2019-05-01T05:10:52.108+00:00";//new Date();

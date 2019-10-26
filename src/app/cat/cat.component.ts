@@ -3,11 +3,11 @@ import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
 @Component({
-  selector: 'app-hrqol',
-  templateUrl: './hrqol.component.html',
-  styleUrls: ['./hrqol.component.css']
+  selector: 'app-cat',
+  templateUrl: './cat.component.html',
+  styleUrls: ['./cat.component.css']
 })
-export class HrqolComponent implements OnInit {
+export class CatComponent implements OnInit {
   //Flag Evan Start
   chosenInfoPain: string;
   infoPain: string[] = [
@@ -401,7 +401,7 @@ export class HrqolComponent implements OnInit {
   message:string = "Survey submitted successfully";
 
   ngOnInit() {
-    this.currentInformativeMessage = this.informativeMessages[ Math.floor(Math.random() * this.informativeMessages.length) + 1  ]
+    // this.currentInformativeMessage = this.informativeMessages[ Math.floor(Math.random() * this.informativeMessages.length) + 1  ]
   }
 
   submit() : void {

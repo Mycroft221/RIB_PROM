@@ -9,30 +9,6 @@
           <table class="example-full-width" cellspacing="0" style="Margin-top:30px">
             <tr>
               <td>
-
-                <label id="spirometer-measurement-radio-group-label">What's one number?</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenSpirometerMeasurement"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let spirometerMeasurement of spirometerMeasurements" [value]="spirometerMeasurement">
-                    {{spirometerMeasurement}}
-                  </mat-radio-button>
-                </mat-radio-group>
-
-                <label id="pain-level-radio-group-label">What's another?</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenPainLevel"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let painLevel of painLevels" [value]="painLevel">
-                    {{painLevel}}
-                  </mat-radio-button>
-                </mat-radio-group>
-
-                <!-- Flag Evan Start -->
                 <label id="health-level-radio-group-label">In general, would you say your health is:</label>
                 <mat-radio-group
                   aria-labelledby="example-radio-group-label"
@@ -428,22 +404,6 @@
                     {{healthExcellent}}
                   </mat-radio-button>
                 </mat-radio-group>
-
-                <!-- add this
-                <label id="test-radio-group-label">This is a test question</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenTestOption"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="testOption">
-                    {{option}}
-                  </mat-radio-button>
-                </mat-radio-group>
-                end-->
-
-                <!-- Flag Evan End-->
-
               </td>
             </tr>
           </table>

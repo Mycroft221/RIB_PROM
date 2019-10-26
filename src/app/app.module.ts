@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SurveyComponent } from './survey/survey.component';
 import { HrqolComponent } from './hrqol/hrqol.component';
+import { CatComponent } from './cat/cat.component';
 import { AppRoutingModule } from './core/app-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {
@@ -22,7 +23,8 @@ import { HttpModule } from '@angular/http';
     LoginComponent,
     SurveyComponent,
     NavBarComponent,
-    HrqolComponent
+    HrqolComponent,
+    CatComponent
   ],
   imports: [
     HttpModule,

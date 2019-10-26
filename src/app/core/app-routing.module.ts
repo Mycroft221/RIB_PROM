@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from '../login/login.component';
 import { SurveyComponent } from '../survey/survey.component';
 import { HrqolComponent } from '../hrqol/hrqol.component';
+import { CatComponent } from '../cat/cat.component';
 const routes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'login', component: LoginComponent },
   { path: 'hrqol', component: HrqolComponent },
+  { path: 'cat', component: CatComponent },
   { path: '', component : LoginComponent }
 ];
 @NgModule({

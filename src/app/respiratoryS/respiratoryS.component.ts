@@ -1,4 +1,4 @@
-import { Component, OnInit } from './node_modules/@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
@@ -179,15 +179,6 @@ export class HrqolComponent implements OnInit {
     'X - I did not do this in the past 7 days'
   ];
 
-  chosenWalkingThirty : string;
-  walkingThirty : string[] = [
-    '0 - No shortness of breath',
-    '1 - Mildly short of breath',
-    '2 - Moderately short of breath',
-    '3 - Severely short of breath',
-    'X - I did not do this in the past 7 days'
-  ];
-
   chosenScrubbing : string;
   scrubbing : string[] = [
     '0 - No shortness of breath',
@@ -346,25 +337,25 @@ export class HrqolComponent implements OnInit {
   message:string = "Survey submitted successfully";
 
   ngOnInit() {
-    this.currentInformativeMessage = this.informativeMessages[ Math.floor(Math.random() * this.informativeMessages.length) + 1  ]
+    // this.currentInformativeMessage = this.informativeMessages[ Math.floor(Math.random() * this.informativeMessages.length) + 1  ]
   }
 
   submit() : void {
-    if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
+  //   if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
 
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
+  //     var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
+  //     var spiroScore = this.chosenSpirometerMeasurement;
+  //     if (spiroScore.includes(" - ")){
+  //       spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
+  //     }
+  //     else {
+  //       spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
+  //     }
 
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
-    }else {
-      alert("Survey incomplete!");
-    }
+  //     this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
+  //     alert(this.message);
+  //   }else {
+  //     alert("Survey incomplete!");
+  //   }
   }
 }

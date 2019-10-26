@@ -31,20 +31,6 @@
                     {{painLevel}}
                   </mat-radio-button>
                 </mat-radio-group>
-
-                <!-- add this-->
-                <label id="test-label">This is a test question.</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenTestOption"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="chosenTestOption">
-                    {{option}}
-                  </mat-radio-button>
-                </mat-radio-group>
-                <!-- end-->
-
               </td>
             </tr>
           </table>
@@ -54,6 +40,7 @@
     <mat-card-actions>
       <button mat-raised-button (click)="submit()" color="primary">Submit</button>
       <button mat-raised-button (click)="hrqol()" color="primary">Quality of Life Questions</button>
+      <button mat-raised-button (click)="cat()" color="primary">Pain Inference CAT</button>
     </mat-card-actions>
 
   </mat-card>
