@@ -22,14 +22,311 @@ export class HrqolComponent implements OnInit {
     '3'
   ];
 
-  // add this
-  chosenTestOption: string;
-  options: string[] = [
-    'testOpt1',
-    'testOpt2',
-    'testOpt3'
+  //Flag Evan Start
+
+  chosenHealthLevel: string;
+  healthLevel: string[] = [
+    '1 - Excellent',
+    '2 - Very Good',
+    '3 - Good',
+    '4 - Fair',
+    '5 - Poor'
   ];
+
+  chosenHealthLevelNow: string;
+  healthLevelNow: string[] = [
+    '1 - Much better now than one year ago',
+    '2 - Somewhat better now than one year ago',
+    '3 - About the same',
+    '4 - Somewhat worse now than one year ago',
+    '5 - Much worse now than one year ago'
+  ];
+
+  chosenVigorousActivities: string;
+  vigorousActivities: string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenModerateActivities : string;
+  moderateActivities : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenLifting : string;
+  lifting : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenClimbingSeveral : string;
+  climbingSeveral : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenClimbingOne : string;
+  climbingOne: string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenBending : string;
+  bending : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenWalkingMiles : string;
+  walkingMiles : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenWalkingBlocks : string;
+  walkingBlocks : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenWalkingOneBlock : string;
+  walkingOneBlock: string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenBathing : string;
+  bathing : string[] = [
+    '1 - Yes, limited a lot',
+    '2 - Yes, limited a little',
+    '3 - No, not limited at all'
+  ];
+
+  chosenCutWork : string;
+  cutWork : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenAccomplishedLess : string;
+  accomplishedLess : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenLimitedWork : string;
+  limitedWork : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenDifficultyWork : string;
+  difficultyWork : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenCutTimeWork : string;
+  cutTimeWork : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenAccomplishedLessLiked : string;
+  accomplishedLessLiked : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenWorkNotAsCarefully : string;
+  workNotAsCarefully : string[] = [
+    'Yes',
+    'No'
+  ];
+
+  chosenPhysicalEmotionalProblems : string;
+  physicalEmotionalProblems : string[] = [
+    '1 - Not at all',
+    '2 - Slightly',
+    '3 - Moderately',
+    '4 - Quite a bit',
+    '5 - Extremely'
+  ];
+
+  chosenBodilyPain : string;
+  bodilyPain : string[] = [
+    '1 - None',
+    '2 - Very mild',
+    '3 - Mild',
+    '4 - Moderate',
+    '5 - Severe',
+    '6 - Very severe'
+  ];
+
+  chosenPainInterfere : string;
+  painInterfere : string[] = [
+    '1 - Not at all',
+    '2 - A little bit',
+    '3 - Moderately',
+    '4 - Quite a bit',
+    '5 - Extremely'
+  ];
+
+  chosenPep : string;
+  pep : string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenNervous : string;
+  nervous : string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenDownNoCheer : string;
+  downNoCheer : string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenCalmPeaceful : string;
+  calmPeaceful : string[] = [
+   'All of the time',
+   'Most of the time',
+   'A good bit of the time',
+   'Some of the time',
+   'A little of the time',
+   'None of the time'
+ ];
+
+  chosenLotEnergy : string;
+  lotEnergy : string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenDownhearted : string;
+  downhearted: string[] = [
+   'All of the time',
+   'Most of the time',
+   'A good bit of the time',
+   'Some of the time',
+   'A little of the time',
+   'None of the time'
+ ];
+
+  chosenWornOut : string;
+  wornOut: string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenHappyPerson : string;
+  happyPerson : string[] = [
+   'All of the time',
+   'Most of the time',
+   'A good bit of the time',
+   'Some of the time',
+   'A little of the time',
+   'None of the time'
+  ];
+
+  chosenFeelTired : string;
+  feelTired : string[] = [
+    'All of the time',
+    'Most of the time',
+    'A good bit of the time',
+    'Some of the time',
+    'A little of the time',
+    'None of the time'
+  ];
+
+  chosenPhysicalEmotionalSocial : string;
+  physicalEmotionalSocial : string[] = [
+    '1 - All of the time',
+    '2 - Most of the time',
+    '3 - Some of the time',
+    '4 - A little of the time',
+    '5 - None of the time'
+  ];
+
+  chosenSickEasier : string;
+  sickEasier : string[] = [
+    'Definitely true',
+    'Mostly true',
+    'Don\'t know',
+    'Mostly false',
+    'Definitely false'
+  ];
+
+  chosenHealthyAnybody : string;
+  healthyAnybody : string[] = [
+    'Definitely true',
+    'Mostly true',
+    'Don\'t know',
+    'Mostly false',
+    'Definitely false'
+  ];
+
+  chosenHealthWorse : string;
+  healthWorse : string[] = [
+    'Definitely true',
+    'Mostly true',
+    'Don\'t know',
+    'Mostly false',
+    'Definitely false'
+  ];
+
+  chosenHealthExcellent : string;
+  healthExcellent : string[] = [
+    'Definitely true',
+    'Mostly true',
+    'Don\'t know',
+    'Mostly false',
+    'Definitely false'
+  ];
+
+  // add this
+  // chosenTestOption: string;
+  // options: string[] = [
+  //  'testOpt1',
+  //  'testOpt2',
+  //  'testOpt3'
+  //];
   // end
+
+  //Flag Evan End
 
   currentInformativeMessage = '';
   informativeMessages: string[] = [
@@ -56,6 +353,19 @@ export class HrqolComponent implements OnInit {
   }
 
   submit() : void {
+    let physicalFunctioning = (Number(this.chosenVigorousActivities.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenModerateActivities.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenLifting.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingSeveral.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingOne.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenBending.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingMiles.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingBlocks.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingOneBlock.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenBathing.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning / 10;
+    this.apiService.submitHrqol(physicalFunctioning);
+    alert("physicalFunctioning: " + physicalFunctioning);
     if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
       const sum = Number(this.chosenPainLevel) + Number(this.chosenSpirometerMeasurement);
       this.apiService.submitHrqol(sum);
