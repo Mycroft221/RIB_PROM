@@ -1,0 +1,274 @@
+<div style='margin-top: 5rem'>
+  <mat-card class="example-card">
+    
+    <mat-card-header>
+        <mat-card-title class="page-title">Please answer the following gos questions</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+          <table class="example-full-width" cellspacing="0" style="Margin-top:30px">
+            <tr>
+              <td>
+
+                <label id="spirometer-measurement-radio-group-label">What's your spirometer measurement?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSpirometerMeasurement"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let spirometerMeasurement of spirometerMeasurements" [value]="spirometerMeasurement">
+                    {{spirometerMeasurement}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-level-radio-group-label">What's your pain level on a scale from 0 to 10?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainLevel"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painLevel of painLevels" [value]="painLevel">
+                    {{painLevel}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- Flag Evan Start -->
+                
+                <label id="assistance-needed-radio-group-label">Is the assistance of another person at home essential every day for some activities of daily living?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAssistanceNeeded"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let assistanceNeeded of assistanceNeeded" [value]="assistanceNeeded">
+                    {{assistanceNeeded}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="frequent-help-radio-group-label">Do you need frequent help of someone to be around at home most of the time?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenFrequentHelp"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let frequentHelp of frequentHelp" [value]="frequentHelp">
+                    {{frequentHelp}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="independent-before-radio-group-label">Were you independent at home before the injury?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenIndependentBefore"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let independentBefore of independentBefore" [value]="independentBefore">
+                    {{independentBefore}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="shop-radio-group-label">Are you able to shop without assistance?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenShop"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let shop of shop" [value]="shop">
+                    {{shop}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="shop-before-radio-group-label">Were you able to shop without assistance before?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenShopBefore"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let shopBefore of shopBefore" [value]="shopBefore">
+                    {{shopBefore}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="travel-radio-group-label">Are you able to travel locally without assistance?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTravel"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let travel of travel" [value]="travel">
+                    {{travel}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="travel-before-radio-group-label">Were you able to travel locally without assistance before the injury?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTravelBefore"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let travelBefore of travelBefore" [value]="travelBefore">
+                    {{travelBefore}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="work-previous-radio-group-label">Are you currently able to work (or look after others at home) to your previous capacity?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWorkPrevious"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let workPrevious of workPrevious" [value]="workPrevious">
+                    {{workPrevious}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="restricted-radio-group-label">How restricted are you?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRestricted"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let restricted of restricted" [value]="restricted">
+                    {{restricted}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="restriction-change-radio-group-label">Does the level of restriction represent a change in respect to the pre-trauma situation?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRestrictedChange"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let restrictionChange of restrictionChange" [value]="restrictionChange">
+                    {{restrictionChange}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="regular-radio-group-label">Are they able to resume regular social and leisure activities outside home?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRegular"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let regular of regular" [value]="regular">
+                    {{regular}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="restriction-social-radio-group-label">What is the extent of restriction on their social and leisure activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRestrictionSocial"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let restrictionSocial of restrictionSocial" [value]="restrictionSocial">
+                    {{restrictionSocial}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="restriction-social-change-radio-group-label">Does the extent of restriction in regular social and leisure activities outside home represent a change in respect or pre-trauma?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenRestrictionSocialChange"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let restrictionSocialChange of restrictionSocialChange" [value]="restrictionSocialChange">
+                    {{restrictionSocialChange}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="disruption-extent-radio-group-label">What has been the extent of disruption or strain?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDisruptionExtent"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let disruptionExtent of disruptionExtent" [value]="disruptionExtent">
+                    {{disruptionExtent}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="disruption-change-radio-group-label">Does the level of disruption or strain represent a change in respect to pre-trauma situation?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDisruptionChange"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let disruptionChange of disruptionChange" [value]="disruptionChange">
+                    {{disruptionChange}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="other-problems-radio-group-label">Are there any other current problems relating to the injury which affect daily life?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenOtherProblems"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let otherProblems of otherProblems" [value]="otherProblems">
+                    {{otherProblems}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="similar-injury-worse-radio-group-label">If similar problems were present before the injury, have these become markedly worse?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSimilarInjuryWorse"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let similarInjuryWorse of similarInjuryWorse" [value]="similarInjuryWorse">
+                    {{similarInjuryWorse}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="factor-outcome-radio-group-label">What is the most important factor in outcome?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenFactorOutcome"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let factorOutcome of factorOutcome" [value]="factorOutcome">
+                    {{factorOutcome}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- add this
+                <label id="test-radio-group-label">This is a test question</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTestOption"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="testOption">
+                    {{option}}
+                  </mat-radio-button>
+                </mat-radio-group>
+                end-->
+
+                <!-- Flag Evan End-->
+
+              </td>
+            </tr>
+          </table>
+          <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <mat-card class="example-card" class="noshadow" style="Margin-top:30px; box-shadow: none">
+
+      <mat-card-header>
+          <mat-card-title class="page-title">Did you know that...</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+          <label id="spirometer-measurement-radio-group-label">{{currentInformativeMessage}}</label>
+      </mat-card-content>
+      
+    </mat-card>
+  
+</div>

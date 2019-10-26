@@ -32,19 +32,417 @@
                   </mat-radio-button>
                 </mat-radio-group>
 
+                <!-- Flag Evan Start -->
+                <label id="health-level-radio-group-label">In general, would you say your health is:</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHealthLevel"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let healthLevel of healthLevel" [value]="healthLevel">
+                    {{healthLevel}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="health-level-now-radio-group-label">Compared to one year ago, how would you are your health in general now?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHealthLevelNow"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let healthLevelNow of healthLevelNow" [value]="healthLevelNow">
+                    {{healthLevelNow}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="vigorous-activities-radio-group-label">Does your health limit you in vigorous activities, such as running, lifting heavy objects, participating in strenuous sports?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenVigorousActivities"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let vigorousActivities of vigorousActivities" [value]="vigorousActivities">
+                    {{vigorousActivities}}
+                  </mat-radio-button>
+                </mat-radio-group>
                 
-                <!-- add this-->
-                <label id="test-label">This is a test question.</label>
+                <label id="moderate-activities-radio-group-label">Does your health limit you in moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenModerateActivities"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let moderateActivities of moderateActivities" [value]="moderateActivities">
+                    {{moderateActivities}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="lifting-radio-group-label">Does your health limit you in lifting or carrying groceries?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLifting"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lifting of lifting" [value]="lifting">
+                    {{lifting}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="climbing-several-radio-group-label">Does your health limit you in climbing several flights of stairs?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenClimbingSeveral"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let climbingSeveral of climbingSeveral" [value]="climbingSeveral">
+                    {{climbingSeveral}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="climbing-one-radio-group-label">Does your health limit you in climbing one flight of stairs?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenClimbingOne"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let climbingOne of climbingOne" [value]="climbingOne">
+                    {{climbingOne}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="bending-radio-group-label">Does your health limit you in bending, kneeling, or stooping?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBending"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bending of bending" [value]="bending">
+                    {{bending}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-miles-radio-group-label">Does your health limit you in walking more than a mile?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingMiles"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingMiles of walkingMiles" [value]="walkingMiles">
+                    {{walkingMiles}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-blocks-radio-group-label">Does your health limit you in walking several blocks?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingBlocks"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingBlocks of walkingBlocks" [value]="walkingBlocks">
+                    {{walkingBlocks}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="walking-one-block-radio-group-label">Does your health limit you in walking one block?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWalkingOneBlock"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let walkingOneBlock of walkingOneBlock" [value]="walkingOneBlock">
+                    {{walkingOneBlock}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="bathing-block-radio-group-label">Does your health limit you in bathing or dressing yourself?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBathing"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bathing of bathing" [value]="bathing">
+                    {{bathing}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="cut-work-block-radio-group-label">During the past 4 weeks, have you had to cut down the amount of time you spent on work or other activities</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCutWork"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let cutWork of cutWork" [value]="cutWork">
+                    {{cutWork}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="accomplished-less-work-block-radio-group-label">During the past 4 weeks, have you accomplished less than you would like</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAccomplishedLess"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let accomplishedLess of accomplishedLess" [value]="accomplishedLess">
+                    {{accomplishedLess}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="limited-work-block-radio-group-label">During the past 4 weeks, were you limited in the kind of work or other activities</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLimitedWork"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let limitedWork of limitedWork" [value]="limitedWork">
+                    {{limitedWork}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="difficulty-work-block-radio-group-label">During the past 4 weeks, have you had difficulty performing the work or other activities (for example, it took extra effort)</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDifficultyWork"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let difficultyWork of difficultyWork" [value]="difficultyWork">
+                    {{difficultyWork}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="cut-time-work-block-radio-group-label">During the past 4 weeks, due to emotional problems, have you had to cut down the amount of time you spent on work or other activities</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCutTimeWork"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let cutTimeWork of cutTimeWork" [value]="cutTimeWork">
+                    {{cutTimeWork}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="accomplished-less-liked-work-block-radio-group-label">During the past 4 weeks, due to emotional problems, have you accomplished less than you would like</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenAccomplishedLessLiked"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let accomplishedLessLiked of accomplishedLessLiked" [value]="accomplishedLessLiked">
+                    {{accomplishedLessLiked}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="work-not-as-carefully-work-block-radio-group-label">During the past 4 weeks, due to emotional problems, did you not do work or other activities as carefully as usual</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWorkNotAsCarefully"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let workNotAsCarefully of workNotAsCarefully" [value]="workNotAsCarefully">
+                    {{workNotAsCarefully}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="physical-emotional-problems-work-block-radio-group-label">During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPhysicalEmotionalProblems"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let physicalEmotionalProblems of physicalEmotionalProblems" [value]="physicalEmotionalProblems">
+                    {{physicalEmotionalProblems}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="bodily-pain-work-block-radio-group-label">How much bodily pain have you had during the past 4 weeks?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenBodilyPain"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let bodilyPain of bodilyPain" [value]="bodilyPain">
+                    {{bodilyPain}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="paint-interfere-block-radio-group-label">During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainInterfere"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painInterfere of painInterfere" [value]="painInterfere">
+                    {{painInterfere}}
+                  </mat-radio-button>
+                </mat-radio-group>
+                
+                <label id="pep-radio-group-label">During the past 4 weeks, did you feel full of pep?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPep"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let pep of pep" [value]="pep">
+                    {{pep}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="nervous-radio-group-label">During the past 4 weeks, have you been a very nervous person?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenNervous"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let nervous of nervous" [value]="nervous">
+                    {{nervous}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="down-no-cheer-radio-group-label">During the past 4 weeks, have you felt so down in the dumps that nothing could cheer you up?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDownNoCheer"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let downNoCheer of downNoCheer" [value]="downNoCheer">
+                    {{downNoCheer}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="calm-peaceful-radio-group-label">During the past 4 weeks, have you felt calm and peaceful</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenCalmPeaceful"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let calmPeaceful of calmPeaceful" [value]="calmPeaceful">
+                    {{calmPeaceful}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="lot-energy-radio-group-label">During the past 4 weeks, did you have a lot of energy?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenLotEnergy"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let lotEnergy of lotEnergy" [value]="lotEnergy">
+                    {{lotEnergy}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="downhearted-radio-group-label">During the past 4 weeks, have you felt downhearted and blue?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenDownhearted"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let downhearted of downhearted" [value]="downhearted">
+                    {{downhearted}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="worn-out-radio-group-label">During the past 4 weeks, did you feel worn out?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenWornOut"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let wornOut of wornOut" [value]="wornOut">
+                    {{wornOut}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="happy-person-radio-group-label">Have you been a happy person</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHappyPerson"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let happyPerson of happyPerson" [value]="happyPerson">
+                    {{happyPerson}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="feel-tired-radio-group-label">Did you feel tired?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenFeelTired"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let feelTired of feelTired" [value]="feelTired">
+                    {{feelTired}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="physical-emotional-social-radio-group-label">During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPhysicalEmotionalSocial"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let physicalEmotionalSocial of physicalEmotionalSocial" [value]="physicalEmotionalSocial">
+                    {{physicalEmotionalSocial}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="sick-easier-radio-group-label">I seem to get sick a little easier than other people</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenSickEasier"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let sickEasier of sickEasier" [value]="sickEasier">
+                    {{sickEasier}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="healthy-anybody-radio-group-label">I am as healthy as anybody I know</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHealthyAnybody"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let healthyAnybody of healthyAnybody" [value]="healthyAnybody">
+                    {{healthyAnybody}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="health-worse-radio-group-label">I expect my health to get worse</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHealthWorse"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let healthWorse of healthWorse" [value]="healthWorse">
+                    {{healthWorse}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="health-excellent-radio-group-label">My health is excellent</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenHealthExcellent"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let healthExcellent of healthExcellent" [value]="healthExcellent">
+                    {{healthExcellent}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- add this
+                <label id="test-radio-group-label">This is a test question</label>
                 <mat-radio-group
                   aria-labelledby="example-radio-group-label"
                   class="example-radio-group"
                   [(ngModel)]="chosenTestOption"
                   style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="chosenTestOption">
+                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="testOption">
                     {{option}}
                   </mat-radio-button>
                 </mat-radio-group>
-                <!-- end-->
+                end-->
+
+                <!-- Flag Evan End-->
 
               </td>
             </tr>

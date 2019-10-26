@@ -1,0 +1,448 @@
+<div style='margin-top: 5rem'>
+  <mat-card class="example-card">
+    
+    <mat-card-header>
+        <mat-card-title class="page-title">Please answer the following cat questions</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+          <table class="example-full-width" cellspacing="0" style="Margin-top:30px">
+            <tr>
+              <td>
+                <!-- Flag Evan -->
+                <label id="info-pain-radio-group-label">In the past 7 days, how difficult was it for you to take in new information because of pain?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenInfoPain"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let infoPain of infoPain" [value]="infoPain">
+                    {{infoPain}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-enjoy-radio-group-label">In the past 7 days, how much did pain interfere with your enjoyment of life?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainEnjoy"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painEnjoy of painEnjoy" [value]="painEnjoy">
+                    {{painEnjoy}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-leisure-radio-group-label">In the past 7 days, how much did pain interfere with your ability to particpate in leisure activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainLeisure"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painLeisure of painLeisure" [value]="painLeisure">
+                    {{painLeisure}}
+                  </mat-radio-button>
+                </mat-radio-group>                
+
+                <label id="pain-personal-radio-group-label">In the past 7 days, how much did pain interfere with your close personal relationships?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainPersonal"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painPersonal of painPersonal" [value]="painPersonal">
+                    {{painPersonal}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-concentrate-radio-group-label">In the past 7 days, how much did pain interfere with your ability to concentrate?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainConcentrate"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painConcentrate of painConcentrate" [value]="painConcentrate">
+                    {{painConcentrate}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-day-radio-group-label">In the past 7 days, how much did pain interfere with day to day activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainDay"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painDay of painDay" [value]="painDay">
+                    {{painDay}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-tense-radio-group-label">In the past 7 days, how often did you feel emotionally tense because of your pain?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainTense"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painTense of painTense" [value]="painTense">
+                    {{painTense}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-fun-radio-group-label">In the past 7 days, how much did pain interfere with the things you usually do for fun?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainFun"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painFun of painFun" [value]="painFun">
+                    {{painFun}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-family-radio-group-label">In the past 7 days, how much did pain interfere with your family life?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainFamily"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painFamily of painFamily" [value]="painFamily">
+                    {{painFamily}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-relationships-radio-group-label">In the past 7 days, how much did pain interfere with your relationships with other people?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainRelationships"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painRelationships of painRelationships" [value]="painRelationships">
+                    {{painRelationships}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-sleep-radio-group-label">In the past 7 days, how much did pain make it difficult to fall asleep?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSleep"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSleep of painSleep" [value]="painSleep">
+                    {{painSleep}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-burden-radio-group-label">In the past 7 days, how much did pain feel like a burden to you?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainBurden"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painBurden of painBurden" [value]="painBurden">
+                    {{painBurden}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-housework-radio-group-label">In the past 7 days, how much did pain interfere with work around the home?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainHousework"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painHousework of painHousework" [value]="painHousework">
+                    {{painHousework}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-social-radio-group-label">In the past 7 days, how much did pain interfere with your ability to participate in social activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSocial"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSocial of painSocial" [value]="painSocial">
+                    {{painSocial}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-trips-radio-group-label">In the past 7 days, how much did pain interfere with your ability to make trips from home that kept you gone for more than 2 hours?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainTrips"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painTrips of painTrips" [value]="painTrips">
+                    {{painTrips}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-enjoyment-social-radio-group-label">In the past 7 days, how much did pain interfere with your enjoyment of social activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainEnjoymentSocial"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painEnjoymentSocial of painEnjoymentSocial" [value]="painEnjoymentSocial">
+                    {{painEnjoymentSocial}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-household-radio-group-label">In the past 7 days, how much did pain interfere with your ability to do household chores?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainHousehold"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painHousehold of painHousehold" [value]="painHousehold">
+                    {{painHousehold}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-remember-radio-group-label">In the past 7 days, how much did pain interfere with your ability to remember things?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainRemember"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painRemember of painRemember" [value]="painRemember">
+                    {{painRemember}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-irritable-radio-group-label">In the past 7 days, how irritable did you feel because of pain?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainIrritable"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painIrritable of painIrritable" [value]="painIrritable">
+                    {{painIrritable}}
+                  </mat-radio-button>
+                </mat-radio-group> 
+
+                <label id="pain-tasks-radio-group-label">In the past 7 days, how much did pain interfere with doing your tasks away from home (e.g., getting groceries, running errands)?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainTasks"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painTasks of painTasks" [value]="painTasks">
+                    {{painTasks}}
+                  </mat-radio-button>
+                </mat-radio-group>
+                
+                <label id="pain-depressed-radio-group-label">In the past 7 days, how much did pain make you feel depressed?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainDepressed"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painDepressed of painDepressed" [value]="painDepressed">
+                    {{painDepressed}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-socializing-radio-group-label">In the past 7 days, how often did pain keep you from socializing with others?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSocializing"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSocializing of painSocializing" [value]="painSocializing">
+                    {{painSocializing}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-severe-radio-group-label">In the past 7 days, how often was your pain so severe you could think of nothing else?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSevere"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSevere of painSevere" [value]="painSevere">
+                    {{painSevere}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-discouraged-radio-group-label">In the past 7 days, how often did pain make you feel discouraged?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainDiscouraged"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painDiscouraged of painDiscouraged" [value]="painDiscouraged">
+                    {{painDiscouraged}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-anxious-radio-group-label">In the past 7 days, how often did pain make you feel anxious?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainAnxious"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painAnxious of painAnxious" [value]="painAnxious">
+                    {{painAnxious}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-avoid-radio-group-label">In the past 7 days, how often did you avoid social activities because it might make you hurt more?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainAvoid"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painAvoid of painAvoid" [value]="painAvoid">
+                    {{painAvoid}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-prevent-radio-group-label">In the past 7 days, how often did pain prevent you from walking more than 1 mile?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainPrevent"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painPrevent of painPrevent" [value]="painPrevent">
+                    {{painPrevent}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-standing-radio-group-label">In the past 7 days, how often did pain prevent you from standing for more than one hour?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainStanding"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painStanding of painStanding" [value]="painStanding">
+                    {{painStanding}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-plan-radio-group-label">In the past 7 days, how often did pain make it difficult for you to plan social activities?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainPlan"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painPlan of painPlan" [value]="painPlan">
+                    {{painPlan}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-standing-minutes-radio-group-label">In the past 7 days, how often did pain prevent you from standing for more than 30 minutes?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainStandingMinutes"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painStandingMinutes of painStandingMinutes" [value]="painStandingMinutes">
+                    {{painStandingMinutes}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-sitting-minutes-radio-group-label">In the past 7 days, how often did pain prevent you from sitting for more than 30 minutes?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSittingMinutes"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSittingMinutes of painSittingMinutes" [value]="painSittingMinutes">
+                    {{painSittingMinutes}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-sitting-ten-radio-group-label">In the past 7 days, how often did pain prevent you from sitting for more than 10 minutes?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSittingTen"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSittingTen of painSittingTen" [value]="painSittingMinutes">
+                    {{painSittingTen}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-social-pain-radio-group-label">In the past 7 days, how often was it hard to plan social activities because you didn't know if you would be in pain?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSocialPain"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSocialPain of painSocialPain" [value]="painSocialPain">
+                    {{painSocialPain}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-social-home-radio-group-label">In the past 7 days, how often did pain restrict your social life to your home?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainSocialHome"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painSocialHome of painSocialHome" [value]="painSocialHome">
+                    {{painSocialHome}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-prevent-sitting-radio-group-label">In the past 7 days, how often did pain prevent you from sitting for more than one hour?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainPreventSitting"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painPreventSitting of painPreventSitting" [value]="painPreventSitting">
+                    {{painPreventSitting}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <label id="pain-prevent-standing-radio-group-label">In the past 7 days, how often did pain prevent you from getting into a standing position?</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenPainPreventStanding"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let painPreventStanding of painPreventStanding" [value]="painPreventStanding">
+                    {{painPreventStanding}}
+                  </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- add this
+                <label id="test-radio-group-label">This is a test question</label>
+                <mat-radio-group
+                  aria-labelledby="example-radio-group-label"
+                  class="example-radio-group"
+                  [(ngModel)]="chosenTestOption"
+                  style="Margin-bottom:30px">
+                  <mat-radio-button class="example-radio-button" *ngFor="let option of options" [value]="testOption">
+                    {{option}}
+                  </mat-radio-button>
+                </mat-radio-group>
+                end-->
+
+                <!-- Flag Evan End-->
+
+              </td>
+            </tr>
+          </table>
+          <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <mat-card class="example-card" class="noshadow" style="Margin-top:30px; box-shadow: none">
+
+      <mat-card-header>
+          <mat-card-title class="page-title">Did you know that...</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+          <label id="spirometer-measurement-radio-group-label">{{currentInformativeMessage}}</label>
+      </mat-card-content>
+      
+    </mat-card>
+  
+</div>
