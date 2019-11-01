@@ -3,12 +3,11 @@ import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
 @Component({
-  selector: 'app-hrqol',
-  templateUrl: './hrqol.component.html',
+  selector: 'app-economic',
+  templateUrl: './economic.component.html',
   styleUrls: ['./hrqol.component.css']
 })
-export class PsychosocialComponent implements OnInit {
-  //Flag Evan Start
+export class EconomicComponent implements OnInit {
   chosenMissedWork: string;
   missedWork: string[] = [
     'Yes',
@@ -66,17 +65,6 @@ export class PsychosocialComponent implements OnInit {
     'Full time',
     'Part time'
   ];
-
-  // add this
-  // chosenTestOption: string;
-  // options: string[] = [
-  //  'testOpt1',
-  //  'testOpt2',
-  //  'testOpt3'
-  //];
-  // end
-
-  //Flag Evan End
 
   currentInformativeMessage = '';
   informativeMessages: string[] = [

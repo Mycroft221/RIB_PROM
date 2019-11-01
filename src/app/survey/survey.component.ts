@@ -80,4 +80,8 @@ export class SurveyComponent implements OnInit {
   cat() : void {
     this.router.navigate(["cat"]);
   }
+
+  economic() : void {
+    this.router.navigate(["economic"])
+  }
 }

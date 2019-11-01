@@ -16,6 +16,7 @@ import {
 } from '@angular/material';
 import { ApiService } from './api.service';
 import { HttpModule } from '@angular/http';
+import { EconomicComponent } from './economic/economic.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpModule } from '@angular/http';
     SurveyComponent,
     NavBarComponent,
     HrqolComponent,
-    CatComponent
+    CatComponent,
+    EconomicComponent
   ],
   imports: [
     HttpModule,
