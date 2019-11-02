@@ -17,6 +17,10 @@ import {
 import { ApiService } from './api.service';
 import { HttpModule } from '@angular/http';
 import { EconomicComponent } from './economic/economic.component';
+import { GosComponent } from './gos/gos.component';
+import { PsychosocialComponent } from './psychosocial/psychosocial.component';
+import { RespiratoryFLComponent } from './respiratoryFL/respiratoryFL.component';
+import { RespiratorySComponent } from './respiratoryS/respiratoryS.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { EconomicComponent } from './economic/economic.component';
     NavBarComponent,
     HrqolComponent,
     CatComponent,
-    EconomicComponent
+    EconomicComponent,
+    GosComponent,
+    PsychosocialComponent,
+    RespiratoryFLComponent,
+    RespiratorySComponent
   ],
   imports: [
     HttpModule,

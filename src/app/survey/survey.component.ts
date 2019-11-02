@@ -57,31 +57,47 @@ export class SurveyComponent implements OnInit {
   submit() : void {
     if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
 
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
+      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(' '));
       var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
+      if (spiroScore.includes(' - ')){
+        spiroScore = spiroScore.substring(spiroScore.indexOf(' - ') + 3, spiroScore.indexOf(' mL'));
       }
       else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
+        spiroScore = spiroScore.substring(2, spiroScore.indexOf(' mL'));
       }
 
       this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
       alert(this.message);
     } else {
-      alert("Survey incomplete!");
+      alert('Survey incomplete!');
     }
   }
 
   hrqol() : void {
-    this.router.navigate(["hrqol"]);
+    this.router.navigate(['hrqol']);
   }
 
   cat() : void {
-    this.router.navigate(["cat"]);
+    this.router.navigate(['cat']);
   }
 
   economic() : void {
-    this.router.navigate(["economic"])
+    this.router.navigate(['economic']);
+  }
+
+  gos() : void {
+    this.router.navigate(['gos']);
+  }
+
+  psychosocial() : void {
+    this.router.navigate(['psychosocial']);
+  }
+
+  respiratoryFL() : void {
+    this.router.navigate(['respiratoryFL']);
+  }
+
+  respiratoryS(): void {
+    this.router.navigate(['respiratoryS']);
   }
 }

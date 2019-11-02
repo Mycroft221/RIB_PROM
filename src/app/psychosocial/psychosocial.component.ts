@@ -3,8 +3,8 @@ import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
 @Component({
-  selector: 'app-hrqol',
-  templateUrl: './hrqol.component.html',
+  selector: 'app-psychosocial',
+  templateUrl: './psychosocial.component.html',
   styleUrls: ['./hrqol.component.css']
 })
 export class PsychosocialComponent implements OnInit {

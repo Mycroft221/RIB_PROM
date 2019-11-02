@@ -6,12 +6,20 @@ import { SurveyComponent } from '../survey/survey.component';
 import { HrqolComponent } from '../hrqol/hrqol.component';
 import { CatComponent } from '../cat/cat.component';
 import { EconomicComponent } from '../economic/economic.component';
+import { GosComponent } from '../gos/gos.component';
+import { PsychosocialComponent } from '../psychosocial/psychosocial.component';
+import { RespiratoryFLComponent } from '../respiratoryFL/respiratoryFL.component';
+import { RespiratorySComponent } from '../respiratoryS/respiratoryS.component';
 const routes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'login', component: LoginComponent },
   { path: 'hrqol', component: HrqolComponent },
   { path: 'cat', component: CatComponent },
   { path: 'economic', component: EconomicComponent },
+  { path: 'gos', component: GosComponent},
+  { path: 'psychosocial', component: PsychosocialComponent},
+  { path: 'respiratoryFL', component: RespiratoryFLComponent},
+  { path: 'respiratoryS', component: RespiratorySComponent},
   { path: '', component : LoginComponent }
 ];
 @NgModule({

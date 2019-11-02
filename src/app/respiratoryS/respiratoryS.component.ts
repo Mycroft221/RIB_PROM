@@ -3,11 +3,11 @@ import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
 @Component({
-  selector: 'app-hrqol',
-  templateUrl: './hrqol.component.html',
+  selector: 'app-respiratoryS',
+  templateUrl: './respiratoryS.component.html',
   styleUrls: ['./hrqol.component.css']
 })
-export class HrqolComponent implements OnInit {
+export class RespiratorySComponent implements OnInit {
   chosenDressing : string;
   dressing : string[] = [
     '0 - No shortness of breath',

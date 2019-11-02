@@ -3,34 +3,11 @@ import { ApiService } from '../api.service';
 import { isString, isNumber } from 'util';
 
 @Component({
-  selector: 'app-hrqol',
-  templateUrl: './hrqol.component.html',
+  selector: 'app-gos',
+  templateUrl: './gos.component.html',
   styleUrls: ['./hrqol.component.css']
 })
-export class HrqolComponent implements OnInit {
-  chosenSpirometerMeasurement: string;
-  spirometerMeasurements: string[] = [
-    '< 500 mL',
-    '500 - 750 mL',
-    '750 - 1000 mL',
-    '1000 - 1250 mL',
-    '1250 - 1500 mL',
-    '1500 - 1750 mL',
-    '> 1750 mL'
-  ];
-
-  chosenPainLevel: string;
-  painLevels: string[] = [
-    '0 (No hurt)',
-    '2 (Hurts a little bit)',
-    '4 (Hurts a little more)',
-    '6 (Hurts even more)',
-    '8 (Hurts a lot)',
-    '10 (Hurts worst)'
-  ];
-
-  //Flag Evan Start
-
+export class GosComponent implements OnInit {
   chosenAssistanceNeeded: string;
   assistanceNeeded: string[] = [
     'Yes',
@@ -149,17 +126,6 @@ export class HrqolComponent implements OnInit {
     'A mixture of these'
   ];
 
-  // add this
-  // chosenTestOption: string;
-  // options: string[] = [
-  //  'testOpt1',
-  //  'testOpt2',
-  //  'testOpt3'
-  //];
-  // end
-
-  //Flag Evan End
-
   currentInformativeMessage = '';
   informativeMessages: string[] = [
     'Don’t wrap anything tightly around your ribs while they’re healing. You don’t want anything to limit your breathing, which could lead to pneumonia.',
@@ -185,21 +151,5 @@ export class HrqolComponent implements OnInit {
   }
 
   submit() : void {
-    if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
-
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
-
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
-    }else {
-      alert("Survey incomplete!");
-    }
   }
 }

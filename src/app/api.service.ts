@@ -37,7 +37,7 @@ export class ApiService {
         }
       }
       ).subscribe( response => {
-        console.log("HRQOL response: ", response);
+        console.log("HRQOL response 1: ", response);
       }
     );
     this.http.post(
@@ -62,7 +62,7 @@ export class ApiService {
         }
       }
       ).subscribe( response => {
-        console.log("HRQOL response: ", response);
+        console.log("HRQOL response 2: ", response);
       }
     );
     this.http.post(
@@ -87,7 +87,7 @@ export class ApiService {
         }
       }
       ).subscribe( response => {
-        console.log("HRQOL response: ", response);
+        console.log("HRQOL response 3: ", response);
       }
     );
   }
