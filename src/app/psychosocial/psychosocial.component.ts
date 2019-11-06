@@ -1323,21 +1323,152 @@ export class PsychosocialComponent implements OnInit {
   }
 
   submit() : void {
-    /*if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
+    let before = Number(this.chosenFeelFailureOne.substring(0, 1));
+    before = before + Number(this.chosenFeelUselessOne.substring(0, 1));
+    before = before + Number(this.chosenFeelRespectOne.substring(0, 1));
+    before = before + Number(this.chosenFeelWorthlessOne.substring(0, 1));
+    before = before + Number(this.chosenFeelInferiorOne.substring(0, 1));
+    before = before + Number(this.chosenConfidenceOne.substring(0, 1));
+    before = before + Number(this.chosenAttitudeOne.substring(0, 1));
+    before = before + Number(this.chosenHelplessOne.substring(0, 1));
+    before = before + Number(this.chosenBurdenOne.substring(0, 1));
+    before = before + Number(this.chosenAskOne.substring(0, 1));
+    before = before + Number(this.chosenIsolatedOne.substring(0, 1));
+    before = before + Number(this.chosenDisconnectedOne.substring(0, 1));
+    before = before + Number(this.chosenBurdenOthersOne.substring(0, 1));
+    before = before + Number(this.chosenCloseOne.substring(0, 1));
+    before = before + Number(this.chosenAvoidOne.substring(0, 1));
+    before = before + Number(this.chosenGuiltyOne.substring(0, 1));
+    before = before + Number(this.chosenHardCloseOne.substring(0, 1));
+    before = before + Number(this.chosenRelatingOne.substring(0, 1));
+    before = before + Number(this.chosenHideOne.substring(0, 1));
+    before = before + Number(this.chosenFutureOne.substring(0, 1));
+    before = before + Number(this.chosenBotheredOne.substring(0, 1));
+    before = before + Number(this.chosenControlOne.substring(0, 1));
+    before = before + Number(this.chosenSmallOne.substring(0, 1));
+    before = before + Number(this.chosenInterfereOne.substring(0, 1));
+    before = before + Number(this.chosenFearOne.substring(0, 1));
+    before = before + Number(this.chosenSleepOne.substring(0, 1));
+    before = before + Number(this.chosenDoctorOne.substring(0, 1));
+    before = before + Number(this.chosenGivenOne.substring(0, 1));
+    before = before + Number(this.chosenTroubleOne.substring(0, 1));
+    before = before + Number(this.chosenLacksOne.substring(0, 1));
+    before = before + Number(this.chosenPurposeOne.substring(0, 1));
+    before = before + Number(this.chosenQuestionOne.substring(0, 1));
+    before = before + Number(this.chosenComfortableOne.substring(0, 1));
+    before = before + Number(this.chosenHandleOne.substring(0, 1));
+    before = before + Number(this.chosenConfidentOne.substring(0, 1));
+    before = before + Number(this.chosenGoodOne.substring(0, 1));
+    before = before + Number(this.chosenBodyOne.substring(0, 1));
+    before = before + Number(this.chosenOptimisticOne.substring(0, 1));
+    before = before + Number(this.chosenGoingOne.substring(0, 1));
+    before = before + Number(this.chosenAnythingOne.substring(0, 1));
+    before = before + Number(this.chosenPatientOne.substring(0, 1));
+    before = before + Number(this.chosenHonestOne.substring(0, 1));
+    before = before + Number(this.chosenCountOne.substring(0, 1));
+    before = before + Number(this.chosenCompassionOne.substring(0, 1));
+    before = before + Number(this.chosenMeaningfulOne.substring(0, 1));
+    before = before + Number(this.chosenAwareOne.substring(0, 1));
+    before = before + Number(this.chosenRealizeOne.substring(0, 1));
+    before = before + Number(this.chosenReceivingOne.substring(0, 1));
+    before = before + Number(this.chosenAppreciateOne.substring(0, 1));
+    before = before + Number(this.chosenWillingOne.substring(0, 1));
+    before = before + Number(this.chosenFamilyOne.substring(0, 1));
+    before = before + Number(this.chosenCommunityOne.substring(0, 1));
+    before = before + Number(this.chosenCareOne.substring(0, 1));
+    before = before + Number(this.chosenEmotionsOne.substring(0, 1));
+    before = before + Number(this.chosenAcceptOne.substring(0, 1));
+    before = before + Number(this.chosenUncertaintyOne.substring(0, 1));
+    before = before + Number(this.chosenAdjustOne.substring(0, 1));
+    before = before + Number(this.chosenTakeOne.substring(0, 1));
+    before = before + Number(this.chosenDealOne.substring(0, 1));
+    before = before + Number(this.chosenTendOne.substring(0, 1));
+    before = before + Number(this.chosenMyselfOne.substring(0, 1));
+    before = before + Number(this.chosenLookOne.substring(0, 1));
+    before = before + Number(this.chosenJoyOne.substring(0, 1));
+    before = before + Number(this.chosenEnjoyOne.substring(0, 1));
+    before = before + Number(this.chosenDayOne.substring(0, 1));
+    before = before + Number(this.chosenLifeOne.substring(0, 1));
+    before = before + Number(this.chosenAppreciateLifeOne.substring(0, 1));
+    before = before + Number(this.chosenSenseOne.substring(0, 1));
+    before = before + Number(this.chosenPeacefulOne.substring(0, 1));
+    before = before + Number(this.chosenPeaceOne.substring(0, 1));
+    before = before + Number(this.chosenImportantOne.substring(0, 1));
 
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
+    let after = Number(this.chosenFeelFailureTwo.substring(0, 1));
+    after = after + Number(this.chosenFeelUselessTwo.substring(0, 1));
+    after = after + Number(this.chosenFeelRespectTwo.substring(0, 1));
+    after = after + Number(this.chosenFeelWorthlessTwo.substring(0, 1));
+    after = after + Number(this.chosenFeelInferiorTwo.substring(0, 1));
+    after = after + Number(this.chosenConfidenceTwo.substring(0, 1));
+    after = after + Number(this.chosenAttitudeTwo.substring(0, 1));
+    after = after + Number(this.chosenHelplessTwo.substring(0, 1));
+    after = after + Number(this.chosenBurdenTwo.substring(0, 1));
+    after = after + Number(this.chosenAskTwo.substring(0, 1));
+    after = after + Number(this.chosenIsolatedTwo.substring(0, 1));
+    after = after + Number(this.chosenDisconnectedTwo.substring(0, 1));
+    after = after + Number(this.chosenBurdenOthersTwo.substring(0, 1));
+    after = after + Number(this.chosenCloseTwo.substring(0, 1));
+    after = after + Number(this.chosenAvoidTwo.substring(0, 1));
+    after = after + Number(this.chosenGuiltyTwo.substring(0, 1));
+    after = after + Number(this.chosenHardCloseTwo.substring(0, 1));
+    after = after + Number(this.chosenRelatingTwo.substring(0, 1));
+    after = after + Number(this.chosenHideTwo.substring(0, 1));
+    after = after + Number(this.chosenFutureTwo.substring(0, 1));
+    after = after + Number(this.chosenBotheredTwo.substring(0, 1));
+    after = after + Number(this.chosenControlTwo.substring(0, 1));
+    after = after + Number(this.chosenSmallTwo.substring(0, 1));
+    after = after + Number(this.chosenInterfereTwo.substring(0, 1));
+    after = after + Number(this.chosenFearTwo.substring(0, 1));
+    after = after + Number(this.chosenSleepTwo.substring(0, 1));
+    after = after + Number(this.chosenDoctorTwo.substring(0, 1));
+    after = after + Number(this.chosenGivenTwo.substring(0, 1));
+    after = after + Number(this.chosenTroubleTwo.substring(0, 1));
+    after = after + Number(this.chosenLacksTwo.substring(0, 1));
+    after = after + Number(this.chosenPurposeTwo.substring(0, 1));
+    after = after + Number(this.chosenQuestionTwo.substring(0, 1));
+    after = after + Number(this.chosenComfortableTwo.substring(0, 1));
+    after = after + Number(this.chosenHandleTwo.substring(0, 1));
+    after = after + Number(this.chosenConfidentTwo.substring(0, 1));
+    after = after + Number(this.chosenGoodTwo.substring(0, 1));
+    after = after + Number(this.chosenBodyTwo.substring(0, 1));
+    after = after + Number(this.chosenOptimisticTwo.substring(0, 1));
+    after = after + Number(this.chosenGoingTwo.substring(0, 1));
+    after = after + Number(this.chosenAnythingTwo.substring(0, 1));
+    after = after + Number(this.chosenPatientTwo.substring(0, 1));
+    after = after + Number(this.chosenHTwostTwo.substring(0, 1));
+    after = after + Number(this.chosenCountTwo.substring(0, 1));
+    after = after + Number(this.chosenCompassionTwo.substring(0, 1));
+    after = after + Number(this.chosenMeaningfulTwo.substring(0, 1));
+    after = after + Number(this.chosenAwareTwo.substring(0, 1));
+    after = after + Number(this.chosenRealizeTwo.substring(0, 1));
+    after = after + Number(this.chosenReceivingTwo.substring(0, 1));
+    after = after + Number(this.chosenAppreciateTwo.substring(0, 1));
+    after = after + Number(this.chosenWillingTwo.substring(0, 1));
+    after = after + Number(this.chosenFamilyTwo.substring(0, 1));
+    after = after + Number(this.chosenCommunityTwo.substring(0, 1));
+    after = after + Number(this.chosenCareTwo.substring(0, 1));
+    after = after + Number(this.chosenEmotionsTwo.substring(0, 1));
+    after = after + Number(this.chosenAcceptTwo.substring(0, 1));
+    after = after + Number(this.chosenUncertaintyTwo.substring(0, 1));
+    after = after + Number(this.chosenAdjustTwo.substring(0, 1));
+    after = after + Number(this.chosenTakeTwo.substring(0, 1));
+    after = after + Number(this.chosenDealTwo.substring(0, 1));
+    after = after + Number(this.chosenTendTwo.substring(0, 1));
+    after = after + Number(this.chosenMyselfTwo.substring(0, 1));
+    after = after + Number(this.chosenLookTwo.substring(0, 1));
+    after = after + Number(this.chosenJoyTwo.substring(0, 1));
+    after = after + Number(this.chosenEnjoyTwo.substring(0, 1));
+    after = after + Number(this.chosenDayTwo.substring(0, 1));
+    after = after + Number(this.chosenLifeTwo.substring(0, 1));
+    after = after + Number(this.chosenAppreciateLifeTwo.substring(0, 1));
+    after = after + Number(this.chosenSenseTwo.substring(0, 1));
+    after = after + Number(this.chosenPeacefulTwo.substring(0, 1));
+    after = after + Number(this.chosenPeaceTwo.substring(0, 1));
+    after = after + Number(this.chosenImportantTwo.substring(0, 1));
 
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
-    }else {
-      alert("Survey incomplete!");
-    } */
+    //physicalFunctioning = physicalFunctioning / 10;
+    this.apiService.submitPsychosocial(before, after);
+    alert("Survey Submitted");
   }
 }

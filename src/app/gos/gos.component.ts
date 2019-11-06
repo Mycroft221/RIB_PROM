@@ -151,5 +151,27 @@ export class GosComponent implements OnInit {
   }
 
   submit() : void {
+    let physicalFunctioning = (Number(this.chosenVigorousActivities.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenModerateActivities.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenLifting.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingSeveral.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingOne.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenBending.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingMiles.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingBlocks.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingOneBlock.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning + (Number(this.chosenBathing.substring(0, 1)) - 1) * 50;
+    physicalFunctioning = physicalFunctioning / 10;
+    let roleLimitationsPhysical = this.chosenCutWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenLimitedWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenDifficultyWork === 'Yes' ? 0 : 100;
+    roleLimitationsPhysical = roleLimitationsPhysical / 4;
+    let roleLimitationsEmotional = this.chosenCutTimeWork === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenAccomplishedLessLiked === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenWorkNotAsCarefully === 'Yes' ? 0 : 100;
+    roleLimitationsEmotional = roleLimitationsEmotional / 3;
+    this.apiService.submitHrqol(physicalFunctioning, roleLimitationsPhysical, roleLimitationsEmotional);
+    alert("Survey Submitted");
   }
 }
