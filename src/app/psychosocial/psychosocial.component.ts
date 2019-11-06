@@ -1436,7 +1436,7 @@ export class PsychosocialComponent implements OnInit {
     after = after + Number(this.chosenGoingTwo.substring(0, 1));
     after = after + Number(this.chosenAnythingTwo.substring(0, 1));
     after = after + Number(this.chosenPatientTwo.substring(0, 1));
-    after = after + Number(this.chosenHTwostTwo.substring(0, 1));
+    after = after + Number(this.chosenHonestTwo.substring(0, 1));
     after = after + Number(this.chosenCountTwo.substring(0, 1));
     after = after + Number(this.chosenCompassionTwo.substring(0, 1));
     after = after + Number(this.chosenMeaningfulTwo.substring(0, 1));
