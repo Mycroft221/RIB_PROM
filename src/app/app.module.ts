@@ -21,7 +21,7 @@ import { GosComponent } from './gos/gos.component';
 import { PsychosocialComponent } from './psychosocial/psychosocial.component';
 import { RespiratoryFLComponent } from './respiratoryFL/respiratoryFL.component';
 import { RespiratorySComponent } from './respiratoryS/respiratoryS.component';
-
+import { HomeComponent} from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,8 @@ import { RespiratorySComponent } from './respiratoryS/respiratoryS.component';
     GosComponent,
     PsychosocialComponent,
     RespiratoryFLComponent,
-    RespiratorySComponent
+    RespiratorySComponent,
+    HomeComponent
   ],
   imports: [
     HttpModule,

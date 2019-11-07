@@ -10,6 +10,7 @@ import { GosComponent } from '../gos/gos.component';
 import { PsychosocialComponent } from '../psychosocial/psychosocial.component';
 import { RespiratoryFLComponent } from '../respiratoryFL/respiratoryFL.component';
 import { RespiratorySComponent } from '../respiratoryS/respiratoryS.component';
+import { HomeComponent } from '../home/home.component';
 const routes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'psychosocial', component: PsychosocialComponent},
   { path: 'respiratoryFL', component: RespiratoryFLComponent},
   { path: 'respiratoryS', component: RespiratorySComponent},
+  { path: 'home', component: HomeComponent},
   { path: '', component : LoginComponent }
 ];
 @NgModule({
