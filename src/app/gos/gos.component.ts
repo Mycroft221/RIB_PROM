@@ -151,27 +151,35 @@ export class GosComponent implements OnInit {
   }
 
   submit() : void {
-    let physicalFunctioning = (Number(this.chosenVigorousActivities.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenModerateActivities.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenLifting.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingSeveral.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenClimbingOne.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenBending.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingMiles.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingBlocks.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenWalkingOneBlock.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning + (Number(this.chosenBathing.substring(0, 1)) - 1) * 50;
-    physicalFunctioning = physicalFunctioning / 10;
-    let roleLimitationsPhysical = this.chosenCutWork === 'Yes' ? 0 : 100;
-    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
-    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenLimitedWork === 'Yes' ? 0 : 100;
-    roleLimitationsPhysical = roleLimitationsPhysical + this.chosenDifficultyWork === 'Yes' ? 0 : 100;
-    roleLimitationsPhysical = roleLimitationsPhysical / 4;
-    let roleLimitationsEmotional = this.chosenCutTimeWork === 'Yes' ? 0 : 100;
-    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenAccomplishedLessLiked === 'Yes' ? 0 : 100;
-    roleLimitationsEmotional = roleLimitationsEmotional + this.chosenWorkNotAsCarefully === 'Yes' ? 0 : 100;
-    roleLimitationsEmotional = roleLimitationsEmotional / 3;
-    this.apiService.submitHrqol(physicalFunctioning, roleLimitationsPhysical, roleLimitationsEmotional);
+    //Answers Yes No / Answers Other
+    let answersYN = this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenFrequentHelp === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenIndependentBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenShop === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenShopBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenTravel === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenTravelBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenWorkPrevious === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
+
+    let answersO = this.chosenRestricted === 'Reduced work capacity?' ? 0 : 1;
+
+    answersYN = answersYN + this.chosenRestrictionChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenRegular === 'Yes' ? 0 : 1;
+
+    answersO = answersO + (this.chosenRestrictionSocial === 'Participate a bit less: at least half as often as before injury' ? 1 : (this.chosenRestrictionSocial === 'Participate much less: less than half as often' ? 3 : 2));
+
+    answersYN = answersYN + this.chosenRestrictionSocialChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruption === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruptionExtent === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruptionChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenOtherProblems === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenSimilarInjuryWorse === 'Yes' ? 0 : 1;
+
+    answersO = answersO + (this.chosenFactorOutcome === 'Effects of head injury' ? 1 : (this.chosenFactorOutcome === 'Effects of illness or injury to another part of the body' ? 3 : 2));
+
+    //roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
+    this.apiService.submitGos(answersYN, answersO);
     alert("Survey Submitted");
   }
 }
