@@ -91,21 +91,24 @@ export class EconomicComponent implements OnInit {
   }
 
   submit() : void {
-    /*if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
+    //This needs more testing.  I have never worked with hashmaps in TS --Evan
+    interface IHash {
+      [details: string] : number;
+    }
 
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
+    let myhash: IHash = {};   
+    myhash['0 days'] = 0; myhash['1 day'] = 1; myhash['2 days'] = 2; myhash['3-4 day'] = 3; myhash['5-6 days'] = 4; myhash['1-2 weeks'] = 5; myhash['3+ weeks'] = 6; 
 
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
-    }else {
-      alert("Survey incomplete!");
-    } */
+    let answers = this.chosenMissedWork === 'Yes' ? 0 : 1;
+    answers += myhash[this.chosenDays];
+    answers += this.chosenDisability === 'Yes' ? 0 : 1;
+    answers += myhash[this.chosenDisabilityLong];
+    answers += this.chosenWorking === 'Yes' ? 0 : 1;
+    answers += this.chosenLimited === 'Pre-injury level' ? 0 : 1;
+    answers += this.chosenTime === 'Full time' ? 0 : 1;
+    answers += this.chosenNow === 'Full time' ? 0 : 1;
+
+    this.apiService.submitEconomic(answers);
+    alert("Survey Submitted");
   }
 }

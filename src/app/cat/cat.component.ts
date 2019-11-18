@@ -405,21 +405,48 @@ export class CatComponent implements OnInit {
   }
 
   submit() : void {
-    /*if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
+    let painScore = Number(this.chosenInfoPain.substring(0,1));
+    painScore += Number(this.chosenPainEnjoy.substring(0,1));
+    painScore += Number(this.chosenPainLeisure.substring(0,1));
+    painScore += Number(this.chosenPainPersonal.substring(0,1));
+    painScore += Number(this.chosenPainConcentrate.substring(0,1));
+    painScore += Number(this.chosenPainDay.substring(0,1));
+    painScore += Number(this.chosenPainRecreational.substring(0,1));
+    painScore += Number(this.chosenPainTense.substring(0,1));
+    painScore += Number(this.chosenPainFun.substring(0,1));
+    painScore += Number(this.chosenPainFamily.substring(0,1));
+    painScore += Number(this.chosenPainRelationships.substring(0,1));
+    painScore += Number(this.chosenPainWork.substring(0,1));
+    painScore += Number(this.chosenPainSleep.substring(0,1));
+    painScore += Number(this.chosenPainBurden.substring(0,1));
+    painScore += Number(this.chosenPainHousework.substring(0,1));
+    painScore += Number(this.chosenPainSocial.substring(0,1));
+    painScore += Number(this.chosenPainChores.substring(0,1));
+    painScore += Number(this.chosenPainTrips.substring(0,1));
+    painScore += Number(this.chosenPainEnjoymentSocial.substring(0,1));
+    painScore += Number(this.chosenPainHousehold.substring(0,1));
+    painScore += Number(this.chosenPainRemember.substring(0,1));
+    painScore += Number(this.chosenPainIrritable.substring(0,1));
+    painScore += Number(this.chosenPainTasks.substring(0,1));
+    painScore += Number(this.chosenPainDepressed.substring(0,1));
+    painScore += Number(this.chosenPainDistressing.substring(0,1));
+    painScore += Number(this.chosenPainSocializing.substring(0,1));
+    painScore += Number(this.chosenPainSevere.substring(0,1));
+    painScore += Number(this.chosenPainDiscouraged.substring(0,1));
+    painScore += Number(this.chosenPainAnxious.substring(0,1));
+    painScore += Number(this.chosenPainAvoid.substring(0,1));
+    painScore += Number(this.chosenPainPrevent.substring(0,1));
+    painScore += Number(this.chosenPainStanding.substring(0,1));
+    painScore += Number(this.chosenPainPlan.substring(0,1));
+    painScore += Number(this.chosenPainStandingMinutes.substring(0,1));
+    painScore += Number(this.chosenPainSittingMinutes.substring(0,1));
+    painScore += Number(this.chosenPainSittingTen.substring(0,1));
+    painScore += Number(this.chosenPainSocialPain.substring(0,1));
+    painScore += Number(this.chosenPainSocialHome.substring(0,1));
+    painScore += Number(this.chosenPainPreventSitting.substring(0,1));
+    painScore += Number(this.chosenPainPreventStanding.substring(0,1));
 
-      var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-      var spiroScore = this.chosenSpirometerMeasurement;
-      if (spiroScore.includes(" - ")){
-        spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-      }
-      else {
-        spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-      }
-
-      this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-      alert(this.message);
-    }else {
-      alert("Survey incomplete!");
-    } */
+    this.apiService.submitSurvey(painScore)
+    alert("Survey Submitted");
   }
 }

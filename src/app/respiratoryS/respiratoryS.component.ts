@@ -341,21 +341,41 @@ export class RespiratorySComponent implements OnInit {
   }
 
   submit() : void {
-  //   if(this.chosenSpirometerMeasurement != null && this.chosenPainLevel != null){
+    let answers = Number(this.chosenDressing.substring(0,1) === 'X' ? 0 : this.chosenDressing.substring(0,1));
+    answers += Number(this.chosenWalkingFifty.substring(0,1) === 'X' ? 0 : this.chosenWalkingFifty.substring(0,1));
+    answers += Number(this.chosenWalkingTwenty.substring(0,1) === 'X' ? 0 : this.chosenWalkingTwenty.substring(0,1));
+    answers += Number(this.chosenMeals.substring(0,1) === 'X' ? 0 : this.chosenMeals.substring(0,1));
+    answers += Number(this.chosenDishes.substring(0,1) === 'X' ? 0 : this.chosenDishes.substring(0,1));
+    answers += Number(this.chosenSweeping.substring(0,1) === 'X' ? 0 : this.chosenSweeping.substring(0,1));
+    answers += Number(this.chosenBed.substring(0,1) === 'X' ? 0 : this.chosenBed.substring(0,1));
+    answers += Number(this.chosenLifting.substring(0,1) === 'X' ? 0 : this.chosenLifting.substring(0,1));
+    answers += Number(this.chosenCarrying.substring(0,1) === 'X' ? 0 : this.chosenCarrying.substring(0,1));
+    answers += Number(this.chosenWalkingMile.substring(0,1) === 'X' ? 0 : this.chosenWalkingMile.substring(0,1));
+    answers += Number(this.chosenBath.substring(0,1) === 'X' ? 0 : this.chosenBath.substring(0,1));
+    answers += Number(this.chosenShower.substring(0,1) === 'X' ? 0 : this.chosenShower.substring(0,1));
+    answers += Number(this.chosenSocks.substring(0,1) === 'X' ? 0 : this.chosenSocks.substring(0,1));
+    answers += Number(this.chosenStanding.substring(0,1) === 'X' ? 0 : this.chosenStanding.substring(0,1));
+    answers += Number(this.chosenWalkingTen.substring(0,1) === 'X' ? 0 : this.chosenWalkingTen.substring(0,1));
+    answers += Number(this.chosenWalkingMileTwo.substring(0,1) === 'X' ? 0 : this.chosenWalkingMileTwo.substring(0,1));
+    answers += Number(this.chosenWalkingFive.substring(0,1) === 'X' ? 0 : this.chosenWalkingFive.substring(0,1));
+    answers += Number(this.chosenWalkingTenStairs.substring(0,1) === 'X' ? 0 : this.chosenWalkingTenStairs.substring(0,1));
+    answers += Number(this.chosenWalkingThirty.substring(0,1) === 'X' ? 0 : this.chosenWalkingThirty.substring(0,1));
+    answers += Number(this.chosenScrubbing.substring(0,1) === 'X' ? 0 : this.chosenScrubbing.substring(0,1));
+    answers += Number(this.chosenLiftingFive.substring(0,1) === 'X' ? 0 : this.chosenLiftingFive.substring(0,1));
+    answers += Number(this.chosenLiftingTen.substring(0,1) === 'X' ? 0 : this.chosenLiftingTen.substring(0,1));
+    answers += Number(this.chosenLiftingTwenty.substring(0,1) === 'X' ? 0 : this.chosenLiftingTwenty.substring(0,1));
+    answers += Number(this.chosenCarryingFive.substring(0,1) === 'X' ? 0 : this.chosenCarryingFive.substring(0,1));
+    answers += Number(this.chosenCarryingTen.substring(0,1) === 'X' ? 0 : this.chosenCarryingTen.substring(0,1));
+    answers += Number(this.chosenCar.substring(0,1) === 'X' ? 0 : this.chosenCar.substring(0,1));
+    answers += Number(this.chosenDining.substring(0,1) === 'X' ? 0 : this.chosenDining.substring(0,1));
+    answers += Number(this.chosenLeisureLow.substring(0,1) === 'X' ? 0 : this.chosenLeisureLow.substring(0,1));
+    answers += Number(this.chosenLeisureMid.substring(0,1) === 'X' ? 0 : this.chosenLeisureMid.substring(0,1));
+    answers += Number(this.chosenWalkingNonstop.substring(0,1) === 'X' ? 0 : this.chosenWalkingNonstop.substring(0,1));
+    answers += Number(this.chosenWalkingNonstopMile.substring(0,1) === 'X' ? 0 : this.chosenWalkingNonstopMile.substring(0,1));
+    answers += Number(this.chosenSinging.substring(0,1) === 'X' ? 0 : this.chosenSinging.substring(0,1));
+    answers += Number(this.chosenTalking.substring(0,1) === 'X' ? 0 : this.chosenTalking.substring(0,1));
 
-  //     var painScore = this.chosenPainLevel.substring(0, this.chosenPainLevel.indexOf(" "));
-  //     var spiroScore = this.chosenSpirometerMeasurement;
-  //     if (spiroScore.includes(" - ")){
-  //       spiroScore = spiroScore.substring(spiroScore.indexOf(" - ") + 3, spiroScore.indexOf(" mL"));
-  //     }
-  //     else {
-  //       spiroScore = spiroScore.substring(2, spiroScore.indexOf(" mL"));
-  //     }
-
-  //     this.apiService.submitSurvey(parseFloat(spiroScore), parseFloat(painScore))
-  //     alert(this.message);
-  //   }else {
-  //     alert("Survey incomplete!");
-  //   }
+    this.apiService.submitRespiratoryS(answers);
+    alert("Survey Submitted");
   }
 }
