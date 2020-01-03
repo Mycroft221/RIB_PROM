@@ -151,5 +151,35 @@ export class GosComponent implements OnInit {
   }
 
   submit() : void {
+    //Answers Yes No / Answers Other
+    let answersYN = this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenFrequentHelp === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenIndependentBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenShop === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenShopBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenTravel === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenTravelBefore === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenWorkPrevious === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
+
+    let answersO = this.chosenRestricted === 'Reduced work capacity?' ? 0 : 1;
+
+    answersYN = answersYN + this.chosenRestrictionChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenRegular === 'Yes' ? 0 : 1;
+
+    answersO = answersO + (this.chosenRestrictionSocial === 'Participate a bit less: at least half as often as before injury' ? 1 : (this.chosenRestrictionSocial === 'Participate much less: less than half as often' ? 3 : 2));
+
+    answersYN = answersYN + this.chosenRestrictionSocialChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruption === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruptionExtent === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenDisruptionChange === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenOtherProblems === 'Yes' ? 0 : 1;
+    answersYN = answersYN + this.chosenSimilarInjuryWorse === 'Yes' ? 0 : 1;
+
+    answersO = answersO + (this.chosenFactorOutcome === 'Effects of head injury' ? 1 : (this.chosenFactorOutcome === 'Effects of illness or injury to another part of the body' ? 3 : 2));
+
+    //roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
+    this.apiService.submitGos(answersYN, answersO);
+    alert("Survey Submitted");
   }
 }
