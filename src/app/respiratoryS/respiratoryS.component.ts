@@ -375,7 +375,64 @@ export class RespiratorySComponent implements OnInit {
     answers += Number(this.chosenSinging.substring(0,1) === 'X' ? 0 : this.chosenSinging.substring(0,1));
     answers += Number(this.chosenTalking.substring(0,1) === 'X' ? 0 : this.chosenTalking.substring(0,1));
 
-    this.apiService.submitRespiratoryS(answers);
+    let score = 0; //T score
+    if (answers === 0) { 
+      score = 27.7; 
+    } else if (answers === 1) {
+      score = 32.8;
+    } else if (answers === 2) {
+      score = 36.1;
+    } else if (answers === 3) {
+      score = 38.6;
+    } else if (answers === 4) {
+      score = 40.6;
+    } else if (answers === 5) {
+      score = 42.3;
+    } else if (answers === 6) {
+      score = 43.8;
+    } else if (answers === 7) {
+      score = 45.2;
+    } else if (answers === 8) {
+      score = 46.4;
+    } else if (answers === 9) {
+      score = 47.6;
+    } else if (answers === 10) {
+      score = 48.8;
+    } else if (answers === 11) {
+      score = 50.0;
+    } else if (answers === 12) {
+      score = 51.1;
+    } else if (answers === 19) { //Skipping 13 through 18
+      score = 58.1;
+    } else if (answers === 20) {
+      score = 59.2;
+    } else if (answers === 21) {
+      score = 60.2;
+    } else if (answers === 22) {
+      score = 61.2;
+    } else if (answers === 23) {
+      score = 62.3;
+    } else if (answers === 24) {
+      score = 63.5;
+    } else if (answers === 25) {
+      score = 64.8;
+    } else if (answers === 26) {
+      score = 66.1;
+    } else if (answers === 27) {
+      score = 67.7;
+    } else if (answers === 28) {
+      score = 69.5;
+    } else if (answers === 29) {
+      score = 71.9;
+    } else if (answers === 30) {
+      score = 75.9;
+    } 
+
+    if (answers >= 13 && answers <= 18) {
+      score = 51.1 + (answers - 12) * 1.0;
+    }
+
+    this.apiService.submitRespiratoryS(score);
     alert("Survey Submitted");
   }
 }

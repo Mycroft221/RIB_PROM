@@ -374,8 +374,59 @@ export class RespiratoryFLComponent implements OnInit {
     answers += Number(this.chosenWalkingNonstopMile.substring(0,1) === 'X' ? 0 : this.chosenWalkingNonstopMile.substring(0,1));
     answers += Number(this.chosenSinging.substring(0,1) === 'X' ? 0 : this.chosenSinging.substring(0,1));
     answers += Number(this.chosenTalking.substring(0,1) === 'X' ? 0 : this.chosenTalking.substring(0,1));
+    
+    let score = 0; //T score
+    if (answers === 0) { 
+      score = 29.7; 
+    } else if (answers === 1) {
+      score = 34.9;
+    } else if (answers === 2) {
+      score = 38;
+    } else if (answers === 3) {
+      score = 40.3;
+    } else if (answers === 4) {
+      score = 42.1;
+    } else if (answers === 5) {
+      score = 43.8;
+    } else if (answers === 6) {
+      score = 45.2;
+    } else if (answers === 7) {
+      score = 46.5;
+    } else if (answers === 8) {
+      score = 47.8;
+    } else if (answers === 9) {
+      score = 49;
+    } else if (answers === 10) {
+      score = 50.1;
+    } else if (answers === 11) {
+      score = 51.2;
+    } else if (answers === 12) {
+      score = 52.3;
+    } else if (answers === 22) { //Skipping 13 through 22
+      score = 62.4;
+    } else if (answers === 23) {
+      score = 63.5;
+    } else if (answers === 24) {
+      score = 64.7;
+    } else if (answers === 25) {
+      score = 66;
+    } else if (answers === 26) {
+      score = 67.3;
+    } else if (answers === 27) {
+      score = 68.9;
+    } else if (answers === 28) {
+      score = 70.7;
+    } else if (answers === 29) {
+      score = 73;
+    } else if (answers === 30) {
+      score = 76.7;
+    } 
 
-    this.apiService.submitRespiratoryFL(answers);
+    if (answers >= 13 && answers <= 21) {
+      score = 52.3 + (answers - 12) * 1.0;
+    }
+
+    this.apiService.submitRespiratoryFL(score);
     alert("Survey Submitted");
   }
 }

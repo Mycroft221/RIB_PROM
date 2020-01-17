@@ -151,35 +151,86 @@ export class GosComponent implements OnInit {
   }
 
   submit() : void {
+    /*
+    1 - Death                       Array 0
+    2 - Vegetative State            Array 1
+    3 - Lower Severe Disability     Array 2
+    4 - Upper Severe Disability     Array 3
+    5 - Lower moderate disability   Array 4
+    6 - Upper moderate Disability   Array 5
+    7 - Lower Good Recovery         Array 6
+    8 - Upper Good Recovery         Array 7
+    */
+
+    let state = [0,0,0,0,0,0,0,0];
+
     //Answers Yes No / Answers Other
-    let answersYN = this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenFrequentHelp === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenIndependentBefore === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenShop === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenShopBefore === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenTravel === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenTravelBefore === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenWorkPrevious === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenAssistanceNeeded === 'Yes' ? 0 : 1;
+    if (this.chosenAssistanceNeeded === 'No') {
+      state[1]++;
+    }
 
-    let answersO = this.chosenRestricted === 'Reduced work capacity?' ? 0 : 1;
+    if (this.chosenFrequentHelp === 'Yes') {
+      if (this.chosenIndependentBefore === 'Yes') {
+        state[2]++;
+      } else {
+        state[3]++;
+      }
+    } else {
+      state[1]++;
+    }
+    
+    if (this.chosenShop === 'No') {
+      state[3]++;
+    }
 
-    answersYN = answersYN + this.chosenRestrictionChange === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenRegular === 'Yes' ? 0 : 1;
+    if (this.chosenTravel === 'No') {
+      state[3]++;
+    }
+    
+    if (this.chosenWorkPrevious === 'No') {
+      if (this.chosenRestricted === 'Reduced work capacity?') {
+        state[5]++;
+      } else {
+        state[4]++;
+      }
+    }
 
-    answersO = answersO + (this.chosenRestrictionSocial === 'Participate a bit less: at least half as often as before injury' ? 1 : (this.chosenRestrictionSocial === 'Participate much less: less than half as often' ? 3 : 2));
+    if (this.chosenRegular === 'No') {
+      if (this.chosenRestrictionSocial === 'Participate a bit less: at least half as often as before injury') {
+        state[6]++;
+      } else if (this.chosenRestrictionSocial === 'Participate much less: less than half as often') {
+        state[5]++;
+      } else {
+        state[4]++;
+      }
+    }
 
-    answersYN = answersYN + this.chosenRestrictionSocialChange === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenDisruption === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenDisruptionExtent === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenDisruptionChange === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenOtherProblems === 'Yes' ? 0 : 1;
-    answersYN = answersYN + this.chosenSimilarInjuryWorse === 'Yes' ? 0 : 1;
+    if (this.chosenDisruption === 'Yes') {
+      if (this.chosenDisruptionExtent === 'Occasional - less than weekly') {
+        state[6]++;
+      } else if (this.chosenDisruptionExtent === 'Frequent - once a week or more, but not tolerable') {
+        state[5]++;
+      } else {
+        state[4]++;
+      }
+    }
 
-    answersO = answersO + (this.chosenFactorOutcome === 'Effects of head injury' ? 1 : (this.chosenFactorOutcome === 'Effects of illness or injury to another part of the body' ? 3 : 2));
+    if (this.chosenSimilarInjuryWorse === 'Yes') {
+      state[6]++;
+    } else {
+      state[7]++;
+    }
+    
+    let maxIn = 0;
+    let max = 0;
+    for (let i = 0; i < state.length; i++) {
+      if (state[i] > max) {
+        max = state[i];
+        maxIn = i;
+      }
+    }
 
-    //roleLimitationsPhysical = roleLimitationsPhysical + this.chosenAccomplishedLess === 'Yes' ? 0 : 100;
-    this.apiService.submitGos(answersYN, answersO);
+    this.apiService.submitGos(maxIn + 1); //converting back to proper state (not array index value anymore)
     alert("Survey Submitted");
   }
 }
