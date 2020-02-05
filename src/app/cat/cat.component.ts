@@ -446,7 +446,7 @@ export class CatComponent implements OnInit {
     painScore += Number(this.chosenPainPreventSitting.substring(0,1));
     painScore += Number(this.chosenPainPreventStanding.substring(0,1));
 
-    this.apiService.submitSurvey(painScore)
+    // this.apiService.submitSurvey(painScore)
     alert("Survey Submitted");
   }
 }

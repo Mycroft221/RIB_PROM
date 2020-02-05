@@ -1,1 +1,1 @@
-ng build --prod --base-href . --output-path ./cordova/RIB_PROM/www/
+ng build --prod --base-href . --output-path C:\Projects\RIB_PROM\cordova\RIB_PROM\www\

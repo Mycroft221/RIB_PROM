@@ -108,7 +108,7 @@ export class EconomicComponent implements OnInit {
     answers += this.chosenTime === 'Full time' ? 0 : 1;
     answers += this.chosenNow === 'Full time' ? 0 : 1;
 
-    this.apiService.submitEconomic(answers);
+    // this.apiService.submitEconomic(answers);
     alert("Survey Submitted");
   }
 }

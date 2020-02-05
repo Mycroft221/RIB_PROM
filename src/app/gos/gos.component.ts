@@ -230,7 +230,7 @@ export class GosComponent implements OnInit {
       }
     }
 
-    this.apiService.submitGos(maxIn + 1); //converting back to proper state (not array index value anymore)
+    // this.apiService.submitGos(maxIn + 1); //converting back to proper state (not array index value anymore)
     alert("Survey Submitted");
   }
 }

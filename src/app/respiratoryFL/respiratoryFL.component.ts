@@ -426,7 +426,7 @@ export class RespiratoryFLComponent implements OnInit {
       score = 52.3 + (answers - 12) * 1.0;
     }
 
-    this.apiService.submitRespiratoryFL(score);
+    // this.apiService.submitRespiratoryFL(score);
     alert("Survey Submitted");
   }
 }

@@ -1468,7 +1468,7 @@ export class PsychosocialComponent implements OnInit {
     after = after + Number(this.chosenImportantTwo.substring(0, 1));
 
     //physicalFunctioning = physicalFunctioning / 10;
-    this.apiService.submitPsychosocial(before, after);
+    // this.apiService.submitPsychosocial(before, after);
     alert("Survey Submitted");
   }
 }

@@ -432,7 +432,7 @@ export class RespiratorySComponent implements OnInit {
       score = 51.1 + (answers - 12) * 1.0;
     }
 
-    this.apiService.submitRespiratoryS(score);
+    // this.apiService.submitRespiratoryS(score);
     alert("Survey Submitted");
   }
 }
