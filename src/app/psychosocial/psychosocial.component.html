@@ -36,7 +36,7 @@
                 <mat-radio-group
                   aria-labelledby="example-radio-group-label"
                   class="example-radio-group"
-                  [(ngModel)]="chosenFeelFailureOne"
+                  [(ngModel)]="chosenFeelUselessOne"
                   style="Margin-bottom:30px">
                   <mat-radio-button class="example-radio-button" *ngFor="let feelUselessOne of feelUselessOne" [value]="feelUselessOne">
                     {{feelUselessOne}}
@@ -413,7 +413,7 @@
                   [(ngModel)]="chosenControlOne"
                   style="Margin-bottom:30px">
                   <mat-radio-button class="example-radio-button" *ngFor="let controlOne of controlOne" [value]="controlOne">
-                    {{difficultyOne}}
+                    {{controlOne}}
                   </mat-radio-button>
                 </mat-radio-group>
 
@@ -545,7 +545,7 @@
                   [(ngModel)]="chosenQuestionOne"
                   style="Margin-bottom:30px">
                   <mat-radio-button class="example-radio-button" *ngFor="let questionOne of questionOne" [value]="questionOne">
-                    {{purposeOne}}
+                    {{questionOne}}
                   </mat-radio-button>
                 </mat-radio-group>
 
@@ -1019,28 +1019,6 @@
                   style="Margin-bottom:30px">
                   <mat-radio-button class="example-radio-button" *ngFor="let emotionsTwo of emotionsTwo" [value]="emotionsTwo">
                     {{emotionsTwo}}
-                  </mat-radio-button>
-                </mat-radio-group>
-
-                <label id="care-one-radio-group-label">I feel close to people I care about, how true was this before your illness?</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenCareOne"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let careOne of careOne" [value]="careOne">
-                    {{careOne}}
-                  </mat-radio-button>
-                </mat-radio-group>
-
-                <label id="care-two-radio-group-label">I feel close to people I care about, how true was this since your illness?</label>
-                <mat-radio-group
-                  aria-labelledby="example-radio-group-label"
-                  class="example-radio-group"
-                  [(ngModel)]="chosenCareTwo"
-                  style="Margin-bottom:30px">
-                  <mat-radio-button class="example-radio-button" *ngFor="let careTwo of careTwo" [value]="careTwo">
-                    {{careTwo}}
                   </mat-radio-button>
                 </mat-radio-group>
 
